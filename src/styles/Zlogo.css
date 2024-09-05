@@ -1,0 +1,36 @@
+.logosStyles {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  border-radius: 74% 26% 26% 74% / 71% 54% 46% 29%;
+  background: linear-gradient(135deg, #40c0e7, #3498db);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: all 1s ease;
+  cursor: pointer;
+}
+
+.logosStyles:hover {
+  background: linear-gradient(135deg, #3498db, #40c0e7);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2), 0 4px 6px rgba(0, 0, 0, 0.15);
+  transform: scale(1.2);
+  border-radius: 100% 0% 52% 48% / 42% 57% 43% 58%;
+  box-shadow: 0 0 10px #3498db, 0 0 120px #40c0e7;
+}
+
+.logoText {
+  color: white;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  font-weight: 100;
+  letter-spacing: 1.5px;
+  overflow: hidden;
+  transition: color 1s ease-in-out;
+}
+
+.logoSectionWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}

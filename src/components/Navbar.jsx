@@ -1,36 +1,74 @@
-import './Navbar.css';
+import '../styles/Navbar.css';
+import { GiHamburgerMenu } from 'react-icons/gi';
+import { IoCloseCircleOutline } from 'react-icons/io5';
 
 import { NavLink } from 'react-router-dom';
-
+import { useState, useLayoutEffect } from 'react';
 import ZLogo from './Zlogo';
 
 const Navbar = () => {
-  const getNavLinkClass = ({ isActive }) => {
+  const [showMenu, setShowMenu] = useState(false);
+  const [icons, setIcons] = useState('up');
+
+  const iconsMap = {
+    up: GiHamburgerMenu,
+    down: IoCloseCircleOutline,
+  };
+
+  useLayoutEffect(() => {
+    const handleResize = () =>
+      window.innerWidth > 768 ? setShowMenu(true) : setShowMenu(false);
+    window.addEventListener('resize', handleResize);
+
+    handleResize();
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  const handleDropdownButton = (e) => {
+    setIcons((prev) => (prev === 'up' ? 'down' : 'up'));
+    e.preventDefault();
+    setShowMenu(!showMenu);
+  };
+
+  const handleNavLinkClass = ({ isActive }) => {
     return isActive ? 'ActiveLinks' : 'unActiveLinks';
   };
 
+  const IconComponent = iconsMap[icons];
   return (
     <nav className="navContainer flexJustifySpace">
       <NavLink className="LogoNavlink" to="/">
-        <ZLogo color="#fff" stylesClass="logosStyles" />
-        <span className="logoText">ZAMAN</span>
+        <ZLogo color="#fff" />
+
+        {IconComponent && (
+          <IconComponent
+            className="dropdownButton"
+            onClick={handleDropdownButton}
+          />
+        )}
       </NavLink>
 
-      <section className="flexJustifySpace menuNavLinks">
-        <NavLink to="/" className={getNavLinkClass}>
+      <section
+        className={`flexJustifySpace menuNavLinks ${
+          showMenu ? 'show' : 'hidden'
+        }`}>
+        <NavLink to="/" className={handleNavLinkClass}>
           Home
         </NavLink>
-        <NavLink to="/skills" className={getNavLinkClass}>
+        <NavLink to="/skills" className={handleNavLinkClass}>
           Skills
         </NavLink>
-        <NavLink to="/projects" className={getNavLinkClass}>
+        <NavLink to="/projects" className={handleNavLinkClass}>
           Projects
         </NavLink>
-        <NavLink to="resume" className={getNavLinkClass}>
+        <NavLink to="resume" className={handleNavLinkClass}>
           Resume
         </NavLink>
-        <NavLink to="/contact" className={getNavLinkClass}>
-          Contact{' '}
+        <NavLink to="/contact" className={handleNavLinkClass}>
+          Contact
         </NavLink>
       </section>
     </nav>
