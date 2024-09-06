@@ -41,7 +41,7 @@ const Navbar = () => {
   return (
     <nav className="navContainer flexJustifySpace">
       <NavLink className="LogoNavlink" to="/">
-        <ZLogo color="#fff" />
+        <ZLogo color="#fff" className="zLogo" />
 
         {IconComponent && (
           <IconComponent

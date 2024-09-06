@@ -5,9 +5,10 @@ const ZLogo = ({
   width = '40',
   height = '40',
   alt = 'Zaman-Logo',
+  className,
 }) => {
   return (
-    <section className="logoSectionWrapper">
+    <section className={`logoSectionWrapper ${className}`}>
       <div className="logosStyles">
         <svg
           width={`${width}px`}

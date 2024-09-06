@@ -138,5 +138,10 @@
     border-bottom: 2px solid #ffffff;
     border-radius: 12px;
     transition: all 1s ease-in-out;
+    pointer-events: none;
+  }
+  .zLogo,
+  .dropdownButton {
+    pointer-events: auto;
   }
 }
