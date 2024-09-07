@@ -27,10 +27,13 @@ const Navbar = () => {
     };
   }, []);
 
+  const toggleMenuState = () => {
+    setShowMenu(!showMenu);
+  };
   const handleDropdownButton = (e) => {
     setIcons((prev) => (prev === 'up' ? 'down' : 'up'));
     e.preventDefault();
-    setShowMenu(!showMenu);
+    toggleMenuState();
   };
 
   const handleNavLinkClass = ({ isActive }) => {
@@ -39,39 +42,41 @@ const Navbar = () => {
 
   const IconComponent = iconsMap[icons];
   return (
-    <nav className="navContainer flexJustifySpace">
-      <NavLink className="LogoNavlink" to="/">
-        <ZLogo color="#fff" className="zLogo" />
+    <header className="NavigationBarWrapper">
+      <nav className="navContainer flexJustifySpace">
+        <NavLink className="LogoNavlink" to="/">
+          <ZLogo color="#fff" className="zLogo" />
 
-        {IconComponent && (
-          <IconComponent
-            className="dropdownButton"
-            onClick={handleDropdownButton}
-          />
-        )}
-      </NavLink>
+          {IconComponent && (
+            <IconComponent
+              className="dropdownButton"
+              onClick={handleDropdownButton}
+            />
+          )}
+        </NavLink>
 
-      <section
-        className={`flexJustifySpace menuNavLinks ${
-          showMenu ? 'show' : 'hidden'
-        }`}>
-        <NavLink to="/" className={handleNavLinkClass}>
-          Home
-        </NavLink>
-        <NavLink to="/skills" className={handleNavLinkClass}>
-          Skills
-        </NavLink>
-        <NavLink to="/projects" className={handleNavLinkClass}>
-          Projects
-        </NavLink>
-        <NavLink to="resume" className={handleNavLinkClass}>
-          Resume
-        </NavLink>
-        <NavLink to="/contact" className={handleNavLinkClass}>
-          Contact
-        </NavLink>
-      </section>
-    </nav>
+        <section
+          className={`flexJustifySpace menuNavLinks ${
+            showMenu ? 'show' : 'hidden'
+          }`}>
+          <NavLink to="/" className={handleNavLinkClass}>
+            Home
+          </NavLink>
+          <NavLink to="/skills" className={handleNavLinkClass}>
+            Skills
+          </NavLink>
+          <NavLink to="/projects" className={handleNavLinkClass}>
+            Projects
+          </NavLink>
+          <NavLink to="resume" className={handleNavLinkClass}>
+            Resume
+          </NavLink>
+          <NavLink to="/contact" className={handleNavLinkClass}>
+            Contact
+          </NavLink>
+        </section>
+      </nav>
+    </header>
   );
 };
 export default Navbar;
