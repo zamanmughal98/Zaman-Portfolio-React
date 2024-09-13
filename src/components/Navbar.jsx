@@ -1,10 +1,12 @@
 import '../styles/Navbar.css';
+
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { IoCloseCircleOutline } from 'react-icons/io5';
 
 import { NavLink } from 'react-router-dom';
 import { useState, useLayoutEffect } from 'react';
-import ZLogo from './Zlogo';
+
+import ZLogo from './ZLogo';
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -45,7 +47,7 @@ const Navbar = () => {
     <header className="NavigationBarWrapper">
       <nav className="navContainer flexJustifySpace">
         <NavLink className="LogoNavlink" to="/">
-          <ZLogo color="#fff" className="zLogo" />
+          <ZLogo color="#fff" />
 
           {IconComponent && (
             <IconComponent

@@ -1,12 +1,14 @@
-import MainLayout from './layouts/mainLayout';
-
 import './styles/App.css';
+
 import {
   createBrowserRouter,
   createRoutesFromElements,
   RouterProvider,
   Route,
 } from 'react-router-dom';
+
+import MainLayout from './layouts/MainLayout';
+import ErrorPage from './pages/ErrorPage';
 
 const App = () => {
   const MyRouter = createBrowserRouter(
@@ -30,10 +32,7 @@ const App = () => {
           element={<h2>contact Page Coming Soon ......</h2>}
         />
 
-        <Route
-          path="*"
-          element={<h2>this page is not avaliable right now .....</h2>}
-        />
+        <Route path="*" element={<ErrorPage />} />
       </Route>,
     ),
   );
