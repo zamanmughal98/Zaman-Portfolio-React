@@ -30,8 +30,8 @@
 .dropdownButton {
   display: none;
   color: #3498db;
-  transition: all 1s ease-in-out;
   font-size: 2.3rem;
+  transition: all 1s ease-in-out;
 }
 
 .dropdownButton:hover {
@@ -98,14 +98,12 @@
   color: #ffffff;
   padding: 0.6rem 1rem;
   transition: all 1s ease-in-out;
-  animation-duration: 2s;
 }
 
 .unActiveLinks:hover {
   text-shadow: 0 0 10px #3498db, 0 0 20px #3498db, 0 0 30px #3498db,
     0 0 40px #3498db;
-  animation-name: heartbeat;
-  animation-iteration-count: infinite;
+  animation: heartbeat 2s infinite;
 }
 
 @keyframes heartbeat {
@@ -125,21 +123,26 @@
     padding-bottom: 115px;
     transition: all 1s ease-in-out;
   }
+
   .flexJustifySpace {
     flex-direction: column;
   }
+
   .unActiveLinks,
   .ActiveLinks {
     align-self: flex-start;
   }
+
   .menuNavLinks {
     background: rgba(52, 152, 219, 0.1);
     width: 90%;
     border-radius: 12px;
   }
+
   .dropdownButton {
     display: inline-block;
   }
+
   .LogoNavlink {
     margin-top: 1rem;
     justify-content: space-between;
@@ -151,6 +154,7 @@
     transition: all 1s ease-in-out;
     pointer-events: none;
   }
+
   .zLogo,
   .dropdownButton {
     pointer-events: auto;
