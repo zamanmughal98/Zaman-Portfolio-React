@@ -1,0 +1,74 @@
+.errorPageWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 2rem;
+  height: 100%;
+}
+
+.errorImage {
+  animation: floatingErrorImage 6s infinite ease-in-out;
+  z-index: -1;
+  width: 460px;
+  height: 420px;
+}
+
+@keyframes floatingErrorImage {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-1.5rem) rotate(10deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+.errorPageTitles {
+  font-weight: 100;
+  font-size: 2rem;
+}
+
+.flexRow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  font-weight: 100;
+  font-size: 1.2rem;
+  color: white;
+  gap: 6px;
+}
+
+.linkSubTitle {
+  font-weight: 100;
+  font-size: 1.2rem;
+  font-weight: 100;
+  color: white;
+  transition: all 1s ease-in-out;
+  animation-duration: 2s;
+}
+
+.linkSubTitle:hover {
+  margin-left: 12px;
+  font-weight: bolder;
+  text-shadow: 0 0 10px #3498db, 0 0 20px #3498db, 0 0 30px #3498db,
+    0 0 40px #3498db;
+  animation-name: errorhome;
+  animation-iteration-count: infinite;
+}
+
+@keyframes errorhome {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

@@ -10,13 +10,13 @@ const MainLayout = () => {
     minHeight: '100dvh',
   };
   return (
-    <div style={style}>
+    <section style={style}>
       <Navbar />
       <main style={{ flexGrow: 1 }}>
         <Outlet />
       </main>
       <Footer />
-    </div>
+    </section>
   );
 };
 
