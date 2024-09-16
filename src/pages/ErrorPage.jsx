@@ -8,10 +8,9 @@ const ErrorPage = () => {
   return (
     <section className="errorPageWrapper">
       <img src={errorImage} className="errorImage" />
-      <h1 className="errorPageTitles">This page doesn&rsquo;t exist</h1>
-
+      <h1 className="errorPageTitles">Looks like you&rsquo;re lost</h1>
       <div className="flexRow">
-        <div className>Please check your URL or return to the</div>
+        <div>Please check your URL or return to the</div>
         <Link className="linkSubTitle" to="/">
           Home
         </Link>

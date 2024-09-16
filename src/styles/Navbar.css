@@ -1,6 +1,7 @@
 .NavigationBarWrapper {
   padding-bottom: 100px;
   transition: all 1s ease-in-out;
+  z-index: 100;
 }
 
 .navContainer {
