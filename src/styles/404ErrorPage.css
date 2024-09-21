@@ -12,6 +12,7 @@
   z-index: -1;
   width: 460px;
   height: 420px;
+  filter: drop-shadow(0 0 20px #3498db7b) drop-shadow(0 0 120px #3498db1a);
 }
 
 @keyframes floatingErrorImage {

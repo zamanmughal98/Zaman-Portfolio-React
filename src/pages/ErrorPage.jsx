@@ -1,6 +1,6 @@
 import '../styles/404ErrorPage.css';
 
-import errorImage from '../assets/404 error.png';
+import errorImage from '../assets/images/404 error.png';
 
 import { Link } from 'react-router-dom';
 

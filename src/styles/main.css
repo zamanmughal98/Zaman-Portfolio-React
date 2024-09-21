@@ -12,6 +12,11 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+@font-face {
+  font-family: 'ananda_black_personal';
+  src: url('../assets/fonts/AnandaBlackPersonalUseRegular-rg9Rx.ttf')
+    format('truetype');
+}
 
 a {
   font-weight: 500;

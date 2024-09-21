@@ -1,12 +1,46 @@
 import '../styles/Hero.css';
 
+import image1 from '../assets/images/Hero Image 1.png';
+import image2 from '../assets/images/Hero Image 2.png';
+import image3 from '../assets/images/Hero Image 3.png';
+
 import { useState } from 'react';
 import { useKeenSlider } from 'keen-slider/react';
 import 'keen-slider/keen-slider.min.css';
+import { useNavigate } from 'react-router-dom';
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
+  const sliderTime = 3500;
+
+  const navigate = useNavigate();
+  const contactPage = '/contact';
+  const projetPage = '/projects';
+
+  const introData = [
+    {
+      greeting: 'Hello',
+      introPrefix: "I'm",
+      mainText: 'Zaman Bin Ishfaq',
+      additionalInfo: 'MERN Stack Web Engineer',
+      image: image1,
+    },
+    {
+      greeting: 'Hello',
+      introPrefix: "I'm a",
+      mainText: 'Web Engineer',
+      additionalInfo: 'based in Islamabad',
+      image: image2,
+    },
+    {
+      greeting: 'Hi',
+      introPrefix: "I'm",
+      mainText: 'A Passionate Developer',
+      additionalInfo: 'With Experience in Building Scalable Web Applications',
+      image: image3,
+    },
+  ];
 
   const [sliderRef, instanceRef] = useKeenSlider(
     {
@@ -23,7 +57,6 @@ const Hero = () => {
       (slider) => {
         let timeout;
         let mouseOver = false;
-        const sliderTime = 3500;
 
         const clearNextTimeout = () => clearTimeout(timeout);
         const nextTimeout = () => {
@@ -52,63 +85,45 @@ const Hero = () => {
   );
   return (
     <>
-      <div ref={sliderRef} className="keen-slider">
-        <div className="keen-slider__slide">
-          <div className="container">
-            <div className="slider-content">
-              <div className="image-section">
-                <div className="overlay"></div>
-              </div>
-              <div className="text-section">
-                <div className="text">
-                  <span className="subheading">Hello!</span>
-                  <h1 className="main-heading">
-                    I&rsquo;m <span>Zaman Bin Ishfaq</span>
-                  </h1>
-                  <h2 className="subheading">MERN Stack Web Engineer</h2>
-                  <div className="buttons">
-                    <a href="#" className="btn-primary">
-                      Hire me
-                    </a>
-                    <a href="#" className="btn-outline">
-                      My works
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+      <section ref={sliderRef} className="keen-slider">
+        {introData.map(
+          ({ greeting, introPrefix, mainText, additionalInfo, image }) => (
+            <div className="keen-slider__slide" key={mainText}>
+              <section className="heroSliderContainer">
+                <div className="heroSliderTextSide">
+                  <p className="heroGreeting">{greeting}</p>
+                  <p className="heroText">
+                    {introPrefix}
+                    {'   '}
+                    <span className="heroMainText">{mainText}</span>
+                  </p>
+                  <p className="heroAddtionalText">{additionalInfo}</p>
 
-        <div className="keen-slider__slide">
-          <div className="container">
-            <div className="slider-content">
-              <div className="image-section">
-                <div className="overlay"></div>
-              </div>
-              <div className="text-section">
-                <div className="text">
-                  <span className="subheading">Hello!</span>
-                  <h1 className="main-heading">
-                    I&rsquo;m a <span>web engineer</span> based in Islamabad
-                  </h1>
-                  <div className="buttons">
-                    <a href="#" className="btn-primary">
-                      Hire me
-                    </a>
-                    <a href="#" className="btn-outline">
-                      My works
-                    </a>
+                  <div className="heroButtonsContainer">
+                    <button
+                      className="heroHrieButton"
+                      onClick={() => navigate(contactPage)}>
+                      Hire Me
+                    </button>
+                    <button
+                      className="heroMyWorkButton"
+                      onClick={() => navigate(projetPage)}>
+                      My Work
+                    </button>
                   </div>
                 </div>
-              </div>
+
+                <div className="heroSliderImageSide">
+                  <img className="heroImage" src={image} alt="heroImage" />
+                </div>
+              </section>
             </div>
-          </div>
-        </div>
-      </div>
+          ),
+        )}
+      </section>
 
       {loaded && instanceRef.current && (
-        <div className="dots">
+        <section className="dots">
           {[
             ...Array(instanceRef.current.track.details.slides.length).keys(),
           ].map((idx) => {
@@ -122,7 +137,7 @@ const Hero = () => {
               />
             );
           })}
-        </div>
+        </section>
       )}
     </>
   );

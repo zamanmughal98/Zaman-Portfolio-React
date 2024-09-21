@@ -1,3 +1,113 @@
+.heroSliderContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 2rem;
+  padding: 2.5rem 1.25rem;
+}
+
+.heroSliderTextSide {
+  flex-basis: 45%;
+  padding: 1.25rem;
+  font-weight: 800;
+}
+
+.heroGreeting {
+  font-family: Ananda_Black_Personal;
+  font-size: 1rem;
+  text-align: start;
+}
+
+.heroText {
+  font-weight: 900;
+  font-size: 2rem;
+  text-align: start;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 1);
+}
+
+.heroMainText {
+  color: #3498db;
+  font-size: 3rem;
+}
+
+.heroAddtionalText {
+  text-align: start;
+  font-weight: 100;
+  font-size: 1.25rem;
+}
+
+.heroButtonsContainer {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 2rem;
+}
+
+.heroHrieButton,
+.heroMyWorkButton {
+  white-space: nowrap;
+  font-size: 1.25rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  transition: all 1s ease-in-out;
+}
+
+.heroHrieButton {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  outline: none;
+}
+
+.heroHrieButton:hover {
+  background-color: white;
+  color: #3498db;
+  transform: scale(1.05) translateY(-5px);
+}
+
+.heroHrieButton:active {
+  background-color: #3498db;
+  color: white;
+  transform: scale(0.9) translateY(-5px);
+}
+
+.heroMyWorkButton {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+  outline: none;
+}
+
+.heroMyWorkButton:hover {
+  background: #3498db2e;
+  color: white;
+  border: 2px solid white;
+  transform: scale(1.05) translateY(-5px);
+}
+
+.heroMyWorkButton:active {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+  transform: scale(0.9) translateY(-5px);
+}
+
+.heroSliderImageSide {
+  flex-basis: 45%;
+  display: flex;
+  justify-content: start;
+}
+
+.heroImage {
+  width: 100%;
+  height: auto;
+  max-width: 12.5rem;
+  object-fit: contain;
+  filter: brightness(0.8);
+}
+
 .dots {
   display: flex;
   padding: 10px 0;
@@ -14,10 +124,52 @@
   padding: 5px;
   cursor: pointer;
 }
+
 .dot:focus {
   outline: none;
 }
 
 .dot.active {
   background: #3498db;
+}
+
+@media screen and (max-width: 768px) {
+  .heroSliderContainer {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .heroSliderTextSide {
+    flex-basis: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #3498db2e;
+    color: #fff;
+    padding: 1.25rem;
+    border-radius: 20px;
+    width: 90%;
+  }
+
+  .heroAddtionalText {
+    text-align: center;
+  }
+
+  .heroSliderImageSide {
+    flex-basis: 100%;
+  }
+
+  .heroImage {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    object-fit: cover;
+    z-index: -1;
+  }
 }
