@@ -7,7 +7,7 @@ const HomePage = () => {
   return (
     <section className="homePageContainer">
       <Hero />
-      <About />
+      <About showSectionTitle />
     </section>
   );
 };
