@@ -5,6 +5,7 @@
   align-items: center;
   width: 100%;
   padding: 2.5rem 1.25rem;
+  box-sizing: border-box;
 }
 
 .titlesWrapper {
@@ -32,61 +33,129 @@
 .aboutmeContentWrapper {
   display: flex;
   flex-direction: row;
+  justify-content: start;
+  align-items: center;
   width: 100%;
-  justify-content: center;
-  align-items: start;
   background: #3498db10;
   border: 2px solid #3498db;
   border-radius: 20px;
-  padding: 1.25rem;
+  padding: 0.625rem 1.25rem;
   box-sizing: border-box;
 }
 
-.imageSideContainer {
+.aboutmeImageContainer {
   width: 50%;
 }
 
-.image {
+.aboutmeImage {
   width: 100%;
-  max-width: 18rem;
   height: auto;
-  object-fit: cover;
+  max-width: 18rem;
+  object-fit: contain;
 }
 
-.textSideContainer {
+.aboutmeTextContainer {
   display: flex;
   flex-direction: column;
   width: 50%;
   height: 100%;
-  padding: 1.25rem;
-  font-weight: 800;
-  text-align: start;
+  padding: 0.5rem 1.25rem;
+  box-sizing: border-box;
+  gap: 2rem;
 }
 
 .introductorySentences {
   font-size: 1rem;
   font-weight: 100;
-  margin-bottom: 2rem;
+  text-align: start;
 }
 
-.detailsWrapper {
+.detailsLists {
   display: flex;
   flex-direction: column;
-  list-style-type: none;
   width: 100%;
   gap: 1rem;
+  padding: 0 0.5rem;
+  border-left: 0.5rem solid #fff;
 }
 
-li {
+.detailsLists_Item {
   width: 100%;
   display: flex;
   flex-direction: row;
-  /* gap: 1rem; */
+  justify-content: start;
+  flex-wrap: wrap;
+  align-items: center;
+  text-align: start;
 }
-.keys {
-  width: 130px;
-  display: inline;
+
+.detailsList_key {
+  font-weight: 600;
+  width: 8rem;
 }
-.values {
+
+.detailsList_value {
   font-weight: 100;
+}
+
+@media screen and (max-width: 768px) {
+  .aboutmeContentWrapper {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .aboutmeImageContainer,
+  .aboutmeTextContainer {
+    width: 100%;
+  }
+
+  .aboutmeImage {
+    max-width: 16rem;
+  }
+
+  .introductorySentences {
+    font-size: 0.9rem;
+  }
+
+  .detailsLists_Item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .detailsList_key {
+    width: 100%;
+    margin-bottom: 0.3rem;
+  }
+
+  .detailsList_value {
+    width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: anywhere;
+  }
+
+  .sectionsTitle {
+    font-size: 2.5rem;
+  }
+
+  .titleShadow {
+    font-size: 6rem;
+  }
+
+  .aboutmeContainer {
+    padding: 1.25rem 0.625rem;
+  }
+
+  .detailsLists {
+    padding: 0 0.25rem;
+  }
+
+  .aboutmeTextContainer {
+    gap: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .aboutmeImage {
+    max-width: 12rem;
+  }
 }
