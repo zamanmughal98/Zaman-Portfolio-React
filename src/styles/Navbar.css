@@ -125,6 +125,10 @@
     transition: all 1s ease-in-out;
   }
 
+  .navContainer {
+    padding: 0.7rem;
+  }
+
   .flexJustifySpace {
     flex-direction: column;
   }
@@ -138,10 +142,12 @@
     background: rgba(52, 152, 219, 0.1);
     width: 90%;
     border-radius: 12px;
+    padding: 15px 10px;
   }
 
   .dropdownButton {
     display: inline-block;
+    font-size: 2rem;
   }
 
   .LogoNavlink {
@@ -153,11 +159,33 @@
     border-bottom: 2px solid #ffffff;
     border-radius: 12px;
     transition: all 1s ease-in-out;
+    gap: 0.8rem;
     pointer-events: none;
   }
 
   .zLogo,
   .dropdownButton {
     pointer-events: auto;
+  }
+}
+
+
+@media screen and (max-width: 480px) {
+  .navContainer {
+    padding: 0.5rem;
+  }
+
+  .dropdownButton {
+    font-size: 1.8rem;
+  }
+
+  .menuNavLinks {
+    padding: 10px 5px;
+  }
+
+  .LogoNavlink {
+    gap: 0.5rem;
+    padding: 6px;
+    border-radius: 8px;
   }
 }

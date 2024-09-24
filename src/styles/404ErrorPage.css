@@ -30,6 +30,7 @@
 .errorPageTitles {
   font-weight: 100;
   font-size: 2rem;
+  text-align: center;
 }
 
 .flexRow {
@@ -37,7 +38,6 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-
   font-weight: 100;
   font-size: 1.2rem;
   color: white;
@@ -47,7 +47,6 @@
 .linkSubTitle {
   font-weight: 100;
   font-size: 1.2rem;
-  font-weight: 100;
   color: white;
   transition: all 1s ease-in-out;
   animation-duration: 2s;
@@ -71,5 +70,45 @@
   }
   100% {
     transform: scale(1);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .errorImage {
+    width: 360px;
+    height: auto;
+    max-width: 90%;
+  }
+
+  .errorPageTitles {
+    font-size: 1.8rem;
+    margin-top: 1rem;
+  }
+
+  .flexRow {
+    font-size: 1rem;
+    gap: 4px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .errorImage {
+    width: 280px;
+    height: auto;
+    max-width: 90%;
+  }
+
+  .errorPageTitles {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+  }
+
+  .flexRow {
+    font-size: 0.9rem;
+    gap: 3px;
+  }
+
+  .linkSubTitle {
+    font-size: 1rem;
   }
 }

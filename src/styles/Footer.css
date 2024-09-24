@@ -6,7 +6,9 @@
   transition: all 1s ease-in-out;
   padding: 1.125rem 0;
   border-radius: 16px 16px 0 0;
+  box-sizing: border-box;
 }
+
 .containersWidth {
   width: 80%;
   display: flex;
@@ -15,6 +17,7 @@
   margin: 0 auto;
   gap: 12px;
 }
+
 .socialMediaIcons {
   font-size: 2rem;
   color: #3498db;
@@ -23,6 +26,7 @@
   display: flex;
   justify-content: center;
 }
+
 .socialMediaIcons:hover {
   transform: scale(1.4);
   color: #ffffff;
@@ -34,6 +38,7 @@
   border: 0.5px solid rgb(255, 255, 255);
   flex: 1;
 }
+
 .copyright {
   pointer-events: none;
 }
@@ -45,14 +50,51 @@
   gap: 12px;
   transition: all 1s ease-in-out;
 }
+
 .textIconWrapper:hover {
   transform: scale(1.15);
   font-weight: 100;
   transition: all 1s ease-in-out;
   margin: 0 1rem;
 }
+
 @media screen and (max-width: 768px) {
   .flexWrap {
     flex-direction: column;
+    align-items: center;
+  }
+
+  .footerContainer {
+    padding: 1rem 0;
+  }
+
+  .socialMediaIcons {
+    font-size: 1.8rem;
+  }
+
+  .textIconWrapper {
+    gap: 10px;
+  }
+
+  .containersWidth {
+    width: 85%;
+  }
+
+  .vLines {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .footerContainer {
+    padding: 0.875rem 0;
+  }
+
+  .socialMediaIcons {
+    font-size: 1.5rem;
+  }
+
+  .containersWidth {
+    width: 90%;
   }
 }

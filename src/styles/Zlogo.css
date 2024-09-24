@@ -35,3 +35,17 @@
   align-items: center;
   gap: 1rem;
 }
+
+@media screen and (max-width: 768px) {
+  .logoText {
+    font-size: 1.4rem;
+    letter-spacing: 1.25px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .logoText {
+    font-size: 1.25rem;
+    letter-spacing: 1px;
+  }
+}

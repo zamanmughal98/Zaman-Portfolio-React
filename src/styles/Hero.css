@@ -65,7 +65,7 @@
 .heroHrieButton:hover {
   background-color: white;
   color: #3498db;
-  transform: scale(1.05) translateY(-5px);
+  transform: scale(1.08) translateY(-5px);
 }
 
 .heroHrieButton:active {
@@ -85,7 +85,7 @@
   background: #3498db2e;
   color: white;
   border: 2px solid white;
-  transform: scale(1.05) translateY(-5px);
+  transform: scale(1.08) translateY(-5px);
 }
 
 .heroMyWorkButton:active {
@@ -104,7 +104,7 @@
 .heroImage {
   width: 100%;
   height: auto;
-  max-width: 16rem;
+  max-width: 18rem;
   object-fit: contain;
   filter: brightness(0.8);
 }
@@ -157,11 +157,27 @@
     width: 90%;
   }
 
+  .heroText {
+    font-size: 1.5rem;
+  }
+
+  .heroMainText {
+    font-size: 2.2rem;
+  }
+
   .heroAddtionalText {
     text-align: center;
+    font-size: 1rem;
   }
+
   .heroButtonsContainer {
     justify-content: center;
+  }
+
+  .heroHrieButton,
+  .heroMyWorkButton {
+    font-size: 1rem;
+    padding: 0.6rem 1.25rem;
   }
 
   .heroSliderImageSide {
@@ -170,9 +186,62 @@
 
   .heroImage {
     width: 100%;
-    max-width: 250px;
+    max-width: 16rem;
     height: auto;
     object-fit: cover;
     z-index: -1;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .heroImage {
+    max-width: 12rem;
+  }
+
+  .heroText {
+    font-size: 1.3rem;
+  }
+
+  .heroMainText {
+    font-size: 1.8rem;
+  }
+
+  .heroAddtionalText {
+    font-size: 0.85rem;
+  }
+
+  .heroHrieButton,
+  .heroMyWorkButton {
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .heroHrieButton:hover,
+  .heroMyWorkButton:hover {
+    transform: scale(1.02) translateY(-3px); /* Subtle scaling on mobile */
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .heroGreeting {
+    font-size: 0.6rem;
+  }
+
+  .heroText {
+    font-size: 1rem;
+  }
+
+  .heroMainText {
+    font-size: 1.4rem;
+  }
+
+  .heroAddtionalText {
+    font-size: 0.7rem;
+  }
+
+  .heroHrieButton,
+  .heroMyWorkButton {
+    font-size: 0.7rem;
+    padding: 0.4rem 0.8rem;
   }
 }
