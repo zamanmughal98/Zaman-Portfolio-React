@@ -1,7 +1,7 @@
 import '../styles/About.css';
 
 import image1 from '../assets/images/Hero Image 1.png';
-import image3 from '../assets/images/Hero Image 3.png';
+import image2 from '../assets/images/Hero Image 2.png';
 
 import {
   RiCakeLine,
@@ -14,7 +14,11 @@ import { BiLogoGmail } from 'react-icons/bi';
 import { useNavigate } from 'react-router-dom';
 
 const About = ({ showSectionTitle = false }) => {
-  const aboutmeImage = showSectionTitle ? image1 : image3;
+  const aboutmeImage = showSectionTitle ? image1 : image2;
+  const ContentWrapper = showSectionTitle
+    ? 'aboutmeContentWrapper'
+    : 'aboutmeContentWrapper_rowReverse';
+
   const resumePage = '/resume';
   const navigate = useNavigate();
 
@@ -34,7 +38,7 @@ const About = ({ showSectionTitle = false }) => {
         </section>
       )}
 
-      <section className="aboutmeContentWrapper">
+      <section className={ContentWrapper}>
         <div className="aboutmeImageContainer">
           <img className="aboutmeImage" src={aboutmeImage} alt="about-Image" />
         </div>
@@ -85,11 +89,13 @@ const About = ({ showSectionTitle = false }) => {
             </div>
           </section>
 
-          <button
-            className="aboutmeDownloadResumeButton"
-            onClick={() => navigate(resumePage)}>
-            Download Resume
-          </button>
+          {showSectionTitle && (
+            <button
+              className="aboutmeDownloadResumeButton"
+              onClick={() => navigate(resumePage)}>
+              Download Resume
+            </button>
+          )}
         </div>
       </section>
     </section>

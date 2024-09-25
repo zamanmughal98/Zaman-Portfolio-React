@@ -11,16 +11,16 @@ import MainLayout from './layouts/MainLayout';
 
 import ErrorPage from './pages/ErrorPage';
 import HomePage from './pages/HomePage';
+import SkillsPage from './pages/SkillsPage';
 
 const App = () => {
   const MyRouter = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<MainLayout />}>
         <Route index element={<HomePage />} />
-        <Route
-          path="/skills"
-          element={<h2>skills Page Coming Soon ......</h2>}
-        />
+
+        <Route path="/skills" element={<SkillsPage />} />
+
         <Route
           path="/projects"
           element={<h2>projects Page Coming Soon ......</h2>}

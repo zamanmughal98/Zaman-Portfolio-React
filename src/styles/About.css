@@ -30,7 +30,8 @@
   z-index: -1;
 }
 
-.aboutmeContentWrapper {
+.aboutmeContentWrapper,
+.aboutmeContentWrapper_rowReverse {
   display: flex;
   flex-direction: row;
   justify-content: start;
@@ -41,6 +42,10 @@
   border-radius: 20px;
   padding: 0.625rem 1.25rem;
   box-sizing: border-box;
+}
+
+.aboutmeContentWrapper_rowReverse {
+  flex-direction: row-reverse;
 }
 
 .aboutmeImageContainer {
@@ -126,7 +131,8 @@
 }
 
 @media screen and (max-width: 768px) {
-  .aboutmeContentWrapper {
+  .aboutmeContentWrapper,
+  .aboutmeContentWrapper_rowReverse {
     flex-direction: column;
     padding: 1rem;
   }
@@ -193,7 +199,6 @@
     font-size: 0.85rem;
     padding: 0.5rem 1rem;
     width: 100%;
-
   }
 
   .aboutmeDownloadResumeButton:hover {
@@ -203,8 +208,7 @@
 
 @media screen and (max-width: 320px) {
   .aboutmeDownloadResumeButton {
-     font-size: 0.7rem;
+    font-size: 0.7rem;
     padding: 0.4rem 0.8rem;
   }
-
 }
