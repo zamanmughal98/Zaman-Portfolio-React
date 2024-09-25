@@ -3,6 +3,14 @@ import '../styles/About.css';
 import image1 from '../assets/images/Hero Image 1.png';
 import image3 from '../assets/images/Hero Image 3.png';
 
+import {
+  RiCakeLine,
+  RiUser2Line,
+  RiUserLocationLine,
+  RiCellphoneLine,
+} from 'react-icons/ri';
+import { BiLogoGmail } from 'react-icons/bi';
+
 const About = ({ showSectionTitle = false }) => {
   const aboutmeImage = showSectionTitle ? image1 : image3;
 
@@ -38,27 +46,37 @@ const About = ({ showSectionTitle = false }) => {
 
           <section className="detailsLists">
             <div className="detailsLists_Item">
-              <span className="detailsList_key"> Name:</span>
+              <span className="detailsList_key">
+                <RiUser2Line /> Name:
+              </span>
               <span className="detailsList_value">{myDetails.name}</span>
             </div>
 
             <div className="detailsLists_Item">
-              <span className="detailsList_key"> Date of birth:</span>
+              <span className="detailsList_key">
+                <RiCakeLine /> Date of Birth:
+              </span>
               <span className="detailsList_value">{myDetails.DOB}</span>
             </div>
 
             <div className="detailsLists_Item">
-              <span className="detailsList_key">Address:</span>
+              <span className="detailsList_key">
+                <RiUserLocationLine /> Address:
+              </span>
               <span className="detailsList_value">{myDetails.address}</span>
             </div>
 
             <div className="detailsLists_Item">
-              <span className="detailsList_key">Email:</span>
+              <span className="detailsList_key">
+                <BiLogoGmail /> Email:
+              </span>
               <span className="detailsList_value">{myDetails.email}</span>
             </div>
 
             <div className="detailsLists_Item">
-              <span className="detailsList_key"> Phone:</span>
+              <span className="detailsList_key">
+                <RiCellphoneLine /> Phone:
+              </span>
               <span className="detailsList_value">{myDetails.phone}</span>
             </div>
           </section>
