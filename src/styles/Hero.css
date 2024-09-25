@@ -218,7 +218,7 @@
 
   .heroHrieButton:hover,
   .heroMyWorkButton:hover {
-    transform: scale(1.02) translateY(-3px); /* Subtle scaling on mobile */
+    transform: scale(1.02) translateY(-3px);
   }
 }
 

@@ -11,8 +11,12 @@ import {
 } from 'react-icons/ri';
 import { BiLogoGmail } from 'react-icons/bi';
 
+import { useNavigate } from 'react-router-dom';
+
 const About = ({ showSectionTitle = false }) => {
   const aboutmeImage = showSectionTitle ? image1 : image3;
+  const resumePage = '/resume';
+  const navigate = useNavigate();
 
   const myDetails = {
     name: 'Zaman Bin Ishfaq',
@@ -80,6 +84,12 @@ const About = ({ showSectionTitle = false }) => {
               <span className="detailsList_value">{myDetails.phone}</span>
             </div>
           </section>
+
+          <button
+            className="aboutmeDownloadResumeButton"
+            onClick={() => navigate(resumePage)}>
+            Download Resume
+          </button>
         </div>
       </section>
     </section>

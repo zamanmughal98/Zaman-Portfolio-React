@@ -61,11 +61,11 @@
   height: 100%;
   padding: 0.5rem 1.25rem;
   box-sizing: border-box;
-  gap: 2rem;
+  gap: 2.25rem;
+  font-size: 1rem;
 }
 
 .introductorySentences {
-  font-size: 1rem;
   font-weight: 100;
   text-align: start;
 }
@@ -98,6 +98,33 @@
   font-weight: 100;
 }
 
+.aboutmeDownloadResumeButton {
+  font-size: 1rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.75rem;
+  color: white;
+  background: transparent;
+  border: 2px solid white;
+  outline: none;
+  margin: 0 auto;
+  white-space: nowrap;
+  transition: all 0.5s ease-in-out;
+}
+
+.aboutmeDownloadResumeButton:hover {
+  background: #3498db2e;
+  color: white;
+  border: 2px solid #3498db;
+  transform: scale(1.08) translateY(-5px);
+}
+
+.aboutmeDownloadResumeButton:active {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+  transform: scale(0.9) translateY(-5px);
+}
+
 @media screen and (max-width: 768px) {
   .aboutmeContentWrapper {
     flex-direction: column;
@@ -111,10 +138,6 @@
 
   .aboutmeImage {
     max-width: 16rem;
-  }
-
-  .introductorySentences {
-    font-size: 0.9rem;
   }
 
   .detailsLists_Item {
@@ -151,6 +174,13 @@
 
   .aboutmeTextContainer {
     gap: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .aboutmeDownloadResumeButton {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.25rem;
+    width: 80%;
   }
 }
 
@@ -158,4 +188,23 @@
   .aboutmeImage {
     max-width: 12rem;
   }
+
+  .aboutmeDownloadResumeButton {
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+    width: 100%;
+
+  }
+
+  .aboutmeDownloadResumeButton:hover {
+    transform: scale(1.05) translateY(-5px);
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .aboutmeDownloadResumeButton {
+     font-size: 0.7rem;
+    padding: 0.4rem 0.8rem;
+  }
+
 }
