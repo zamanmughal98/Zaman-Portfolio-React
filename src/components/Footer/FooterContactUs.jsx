@@ -4,10 +4,7 @@ import { IoCallSharp } from 'react-icons/io5';
 import { MdEmail } from 'react-icons/md';
 import { ExternalLink } from 'react-external-link';
 
-const FooterContactUs = ({
-  Phone = '+92 343 5598805',
-  Email = 'zamanmughal98+Dev@gmail.com',
-}) => {
+const FooterContactUs = ({ Phone, Email }) => {
   const EmailSubject = encodeURIComponent('Reaching Out from Your Portfolio!');
 
   const ContactUsIcons = [
@@ -27,7 +24,7 @@ const FooterContactUs = ({
 
   return (
     <>
-      {ContactUsIcons.map(({ link, label, Icon, value }) => (
+      {ContactUsIcons?.map(({ link, label, Icon, value }) => (
         <section className="textIconWrapper" key={`${label}- div`}>
           <ExternalLink
             key={label}

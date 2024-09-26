@@ -9,10 +9,28 @@ import FooterContactUs from './FooterContactUs';
 const Footer = ({ Fullname = 'Zaman Bin Ishfaq' }) => {
   const currentYear = new Date().getFullYear();
 
+  const socialMediaList = [
+    {
+      link: 'https://www.facebook.com/zaman.mughal.1998/',
+      label: 'facebook',
+    },
+    {
+      link: 'https://www.instagram.com/zaman.mughal_/',
+      label: 'instagram',
+    },
+    {
+      link: 'https://www.linkedin.com/in/zaman-bin-ishfaq/',
+      label: 'linkedin',
+    },
+    {
+      link: 'https://github.com/zamanmughal98',
+      label: 'github',
+    },
+  ];
   return (
     <footer className="footerContainer">
       <section className=" containersWidth">
-        <FooterSocialMedia />
+        <FooterSocialMedia socialMediaList={socialMediaList} />
       </section>
 
       <br />
@@ -26,7 +44,10 @@ const Footer = ({ Fullname = 'Zaman Bin Ishfaq' }) => {
       <br />
 
       <section className="containersWidth flexWrap">
-        <FooterContactUs />
+        <FooterContactUs
+          Phone="+92 343 5598805"
+          Email="zamanmughal98+Dev@gmail.com"
+        />
       </section>
 
       <br />
