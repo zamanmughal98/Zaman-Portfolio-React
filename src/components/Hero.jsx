@@ -9,7 +9,12 @@ import { useKeenSlider } from 'keen-slider/react';
 import 'keen-slider/keen-slider.min.css';
 import { useNavigate } from 'react-router-dom';
 
-const Hero = () => {
+const Hero = ({ sliderData }) => {
+  const imageList = {
+    slide1: image1,
+    slide2: image2,
+    slide3: image3,
+  };
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
   const sliderTime = 3500;
@@ -17,30 +22,6 @@ const Hero = () => {
   const navigate = useNavigate();
   const contactPage = '/contact';
   const projetPage = '/projects';
-
-  const introData = [
-    {
-      greeting: 'Hello',
-      introPrefix: "I'm",
-      mainText: 'Zaman Bin Ishfaq',
-      additionalInfo: 'MERN Stack Web Engineer',
-      image: image1,
-    },
-    {
-      greeting: 'Hello',
-      introPrefix: "I'm a",
-      mainText: 'Web Engineer',
-      additionalInfo: 'based in Islamabad',
-      image: image2,
-    },
-    {
-      greeting: 'Hi',
-      introPrefix: "I'm",
-      mainText: 'A Passionate Developer',
-      additionalInfo: 'With Experience in Building Scalable Web Applications',
-      image: image3,
-    },
-  ];
 
   const [sliderRef, instanceRef] = useKeenSlider(
     {
@@ -86,8 +67,8 @@ const Hero = () => {
   return (
     <>
       <section ref={sliderRef} className="keen-slider">
-        {introData.map(
-          ({ greeting, introPrefix, mainText, additionalInfo, image }) => (
+        {sliderData?.map(
+          ({ greeting, introPrefix, mainText, additionalInfo }, index) => (
             <div className="keen-slider__slide" key={mainText}>
               <section className="heroSliderContainer">
                 <div className="heroSliderTextSide">
@@ -114,7 +95,11 @@ const Hero = () => {
                 </div>
 
                 <div className="heroSliderImageSide">
-                  <img className="heroImage" src={image} alt="heroImage" />
+                  <img
+                    className="heroImage"
+                    src={imageList[`slide${index + 1}`]}
+                    alt="heroImage"
+                  />
                 </div>
               </section>
             </div>
@@ -126,7 +111,7 @@ const Hero = () => {
         <section className="dots">
           {[
             ...Array(instanceRef.current.track.details.slides.length).keys(),
-          ].map((idx) => {
+          ]?.map((idx) => {
             return (
               <button
                 key={idx}
