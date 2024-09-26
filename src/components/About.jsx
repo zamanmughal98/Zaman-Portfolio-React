@@ -13,8 +13,13 @@ import { BiLogoGmail } from 'react-icons/bi';
 
 import { useNavigate } from 'react-router-dom';
 
-const About = ({ showSectionTitle = false }) => {
+const About = ({
+  showSectionTitle = false,
+  introductorySentences,
+  details,
+}) => {
   const aboutmeImage = showSectionTitle ? image1 : image2;
+
   const ContentWrapper = showSectionTitle
     ? 'aboutmeContentWrapper'
     : 'aboutmeContentWrapper_rowReverse';
@@ -22,82 +27,43 @@ const About = ({ showSectionTitle = false }) => {
   const resumePage = '/resume';
   const navigate = useNavigate();
 
-  const myDetails = {
-    name: 'Zaman Bin Ishfaq',
-    DOB: 'December 24, 1998',
-    address: 'Islamabad, Pakistan',
-    email: 'zamanmughal98@gmail.com',
-    phone: '+92 343 5598805',
+  const iconMapping = {
+    name: <RiUser2Line />,
+    dob: <RiCakeLine />,
+    address: <RiUserLocationLine />,
+    email: <BiLogoGmail />,
+    phone: <RiCellphoneLine />,
   };
+
   return (
-    <section className="aboutmeContainer">
-      {showSectionTitle && (
-        <section className="titlesWrapper">
-          <div className="sectionsTitle">About Me</div>
-          <div className="titleShadow">About</div>
+    <section className={ContentWrapper}>
+      <div className="aboutmeImageContainer">
+        <img className="aboutmeImage" src={aboutmeImage} alt="about-Image" />
+      </div>
+
+      <div className="aboutmeTextContainer">
+        <div className="introductorySentences">{introductorySentences}</div>
+
+        <section className="detailsLists">
+          {details?.map(({ label, content }) => (
+            <div className="detailsLists_Item" key={label + content}>
+              <span className="detailsList_label">
+                {iconMapping[label.toLowerCase()]} {label}:
+              </span>
+
+              <span className="detailsList_content">{content}</span>
+            </div>
+          ))}
         </section>
-      )}
 
-      <section className={ContentWrapper}>
-        <div className="aboutmeImageContainer">
-          <img className="aboutmeImage" src={aboutmeImage} alt="about-Image" />
-        </div>
-
-        <div className="aboutmeTextContainer">
-          <div className="introductorySentences">
-            A dedicated MERN Stack Web Engineer with over two years of
-            experience in designing and developing dynamic web applications.
-            With a strong foundation in both frontend and backend technologies,
-            I specialize in creating robust, scalable, and user-friendly
-            solutions.
-          </div>
-
-          <section className="detailsLists">
-            <div className="detailsLists_Item">
-              <span className="detailsList_key">
-                <RiUser2Line /> Name:
-              </span>
-              <span className="detailsList_value">{myDetails.name}</span>
-            </div>
-
-            <div className="detailsLists_Item">
-              <span className="detailsList_key">
-                <RiCakeLine /> Date of Birth:
-              </span>
-              <span className="detailsList_value">{myDetails.DOB}</span>
-            </div>
-
-            <div className="detailsLists_Item">
-              <span className="detailsList_key">
-                <RiUserLocationLine /> Address:
-              </span>
-              <span className="detailsList_value">{myDetails.address}</span>
-            </div>
-
-            <div className="detailsLists_Item">
-              <span className="detailsList_key">
-                <BiLogoGmail /> Email:
-              </span>
-              <span className="detailsList_value">{myDetails.email}</span>
-            </div>
-
-            <div className="detailsLists_Item">
-              <span className="detailsList_key">
-                <RiCellphoneLine /> Phone:
-              </span>
-              <span className="detailsList_value">{myDetails.phone}</span>
-            </div>
-          </section>
-
-          {showSectionTitle && (
-            <button
-              className="aboutmeDownloadResumeButton"
-              onClick={() => navigate(resumePage)}>
-              Download Resume
-            </button>
-          )}
-        </div>
-      </section>
+        {showSectionTitle && (
+          <button
+            className="aboutmeDownloadResumeButton"
+            onClick={() => navigate(resumePage)}>
+            Download Resume
+          </button>
+        )}
+      </div>
     </section>
   );
 };
