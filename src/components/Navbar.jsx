@@ -6,7 +6,7 @@ import { IoCloseCircleOutline } from 'react-icons/io5';
 import { NavLink } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
-import { debounce } from '../config/utils';
+import { capitalizeSentence, debounce } from '../config/utils';
 import ZLogo from './ZLogo';
 
 const Navbar = () => {
@@ -14,6 +14,13 @@ const Navbar = () => {
   const [icons, setIcons] = useState('up');
   const [windowWidth, setWindowWidth] = useState(window.innerWidth); // State for window width
 
+  const NavsLinkList = [
+    { title: 'Home', link: '/' },
+    { title: 'Skills', link: '/skills' },
+    { title: 'Projects', link: '/projects' },
+    { title: 'Resume', link: '/resume' },
+    { title: 'Contact', link: '/contact' },
+  ];
   const iconsMap = {
     up: GiHamburgerMenu,
     down: IoCloseCircleOutline,
@@ -70,36 +77,15 @@ const Navbar = () => {
           className={`flexJustifySpace menuNavLinks ${
             showMenu ? 'show' : 'hidden'
           }`}>
-          <NavLink
-            to="/"
-            className={handleNavLinkClass}
-            onClick={handleLinkClick}>
-            Home
-          </NavLink>
-          <NavLink
-            to="/skills"
-            className={handleNavLinkClass}
-            onClick={handleLinkClick}>
-            Skills
-          </NavLink>
-          <NavLink
-            to="/projects"
-            className={handleNavLinkClass}
-            onClick={handleLinkClick}>
-            Projects
-          </NavLink>
-          <NavLink
-            to="/resume"
-            className={handleNavLinkClass}
-            onClick={handleLinkClick}>
-            Resume
-          </NavLink>
-          <NavLink
-            to="/contact"
-            className={handleNavLinkClass}
-            onClick={handleLinkClick}>
-            Contact
-          </NavLink>
+          {NavsLinkList?.map(({ title, link }) => (
+            <NavLink
+              key={title}
+              to={link}
+              className={handleNavLinkClass}
+              onClick={handleLinkClick}>
+              {capitalizeSentence(title)}
+            </NavLink>
+          ))}
         </section>
       </nav>
     </header>
