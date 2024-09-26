@@ -14,6 +14,12 @@ import HomePage from './pages/HomePage';
 import SkillsPage from './pages/SkillsPage';
 
 const App = () => {
+  const errorDetails = {
+    errorHeading: "Looks like you're lost",
+    errorMessage: 'Please check your URL or return to the',
+    gotoRoute: 'Home',
+    link: '/',
+  };
   const MyRouter = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<MainLayout />}>
@@ -34,7 +40,7 @@ const App = () => {
           element={<h2>contact Page Coming Soon ......</h2>}
         />
 
-        <Route path="*" element={<ErrorPage />} />
+        <Route path="*" element={<ErrorPage errorDetails={errorDetails} />} />
       </Route>,
     ),
   );

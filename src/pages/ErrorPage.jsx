@@ -4,15 +4,16 @@ import errorImage from '../assets/images/404 error.png';
 
 import { Link } from 'react-router-dom';
 
-const ErrorPage = () => {
+const ErrorPage = ({ errorDetails }) => {
+  const { errorHeading, errorMessage, gotoRoute, link } = errorDetails;
   return (
     <section className="errorPageWrapper">
       <img src={errorImage} className="errorImage" />
-      <h1 className="errorPageTitles">Looks like you&rsquo;re lost</h1>
+      <h1 className="errorPageTitles">{errorHeading}</h1>
       <div className="flexRow">
-        <div>Please check your URL or return to the</div>
-        <Link className="linkSubTitle" to="/">
-          Home
+        <div>{errorMessage}</div>
+        <Link className="linkSubTitle" to={link}>
+          {gotoRoute}
         </Link>
       </div>
     </section>
