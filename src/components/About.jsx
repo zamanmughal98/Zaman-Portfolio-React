@@ -12,6 +12,7 @@ import {
 import { BiLogoGmail } from 'react-icons/bi';
 
 import { useNavigate } from 'react-router-dom';
+import { capitalizeSentence } from '../config/utils';
 
 const About = ({
   showSectionTitle = false,
@@ -24,7 +25,10 @@ const About = ({
     ? 'aboutmeContentWrapper'
     : 'aboutmeContentWrapper_rowReverse';
 
-  const resumePage = '/resume';
+  const resumeButton = {
+    title: 'download resume',
+    linkTo: '/resume',
+  };
   const navigate = useNavigate();
 
   const iconMapping = {
@@ -48,7 +52,7 @@ const About = ({
           {details?.map(({ label, content }) => (
             <div className="detailsLists_Item" key={label + content}>
               <span className="detailsList_label">
-                {iconMapping[label.toLowerCase()]} {label}:
+                {iconMapping[label.toLowerCase()]} {capitalizeSentence(label)}:
               </span>
 
               <span className="detailsList_content">{content}</span>
@@ -59,8 +63,8 @@ const About = ({
         {showSectionTitle && (
           <button
             className="aboutmeDownloadResumeButton"
-            onClick={() => navigate(resumePage)}>
-            Download Resume
+            onClick={() => navigate(resumeButton.linkTo)}>
+            {capitalizeSentence(resumeButton.title)}
           </button>
         )}
       </div>
