@@ -17,8 +17,8 @@ const App = () => {
   const errorDetails = {
     errorHeading: "Looks like you're lost",
     errorMessage: 'Please check your URL or return to the',
-    gotoRoute: 'Home',
-    link: '/',
+    gotoRoute: 'home',
+    linkto: '/',
   };
   const MyRouter = createBrowserRouter(
     createRoutesFromElements(
@@ -31,10 +31,12 @@ const App = () => {
           path="/projects"
           element={<h2>projects Page Coming Soon ......</h2>}
         />
+
         <Route
           path="/resume"
           element={<h2>resume Page Coming Soon ......</h2>}
         />
+
         <Route
           path="/contact"
           element={<h2>contact Page Coming Soon ......</h2>}
