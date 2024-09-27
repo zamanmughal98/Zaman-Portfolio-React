@@ -8,6 +8,7 @@ import { useState } from 'react';
 import { useKeenSlider } from 'keen-slider/react';
 import 'keen-slider/keen-slider.min.css';
 import { useNavigate } from 'react-router-dom';
+import { capitalizeSentence } from '../config/utils';
 
 const Hero = ({ sliderData }) => {
   const imageList = {
@@ -20,8 +21,19 @@ const Hero = ({ sliderData }) => {
   const sliderTime = 3500;
 
   const navigate = useNavigate();
-  const contactPage = '/contact';
-  const projetPage = '/projects';
+
+  const sliderButtonsList = [
+    {
+      cssStyles: 'heroHrieButton',
+      linkto: '/contact',
+      title: 'hire me',
+    },
+    {
+      cssStyles: 'heroMyWorkButton',
+      linkto: '/projects',
+      title: 'my work',
+    },
+  ];
 
   const [sliderRef, instanceRef] = useKeenSlider(
     {
@@ -64,6 +76,7 @@ const Hero = ({ sliderData }) => {
       },
     ],
   );
+
   return (
     <>
       <section ref={sliderRef} className="keen-slider">
@@ -81,16 +94,14 @@ const Hero = ({ sliderData }) => {
                   <p className="heroAddtionalText">{additionalInfo}</p>
 
                   <div className="heroButtonsContainer">
-                    <button
-                      className="heroHrieButton"
-                      onClick={() => navigate(contactPage)}>
-                      Hire Me
-                    </button>
-                    <button
-                      className="heroMyWorkButton"
-                      onClick={() => navigate(projetPage)}>
-                      My Work
-                    </button>
+                    {sliderButtonsList?.map(({ cssStyles, linkto, title }) => (
+                      <button
+                        key={title}
+                        className={cssStyles}
+                        onClick={() => navigate(linkto)}>
+                        {capitalizeSentence(title)}
+                      </button>
+                    ))}
                   </div>
                 </div>
 
