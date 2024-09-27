@@ -15,11 +15,11 @@ const Navbar = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth); // State for window width
 
   const NavsLinkList = [
-    { title: 'Home', link: '/' },
-    { title: 'Skills', link: '/skills' },
-    { title: 'Projects', link: '/projects' },
-    { title: 'Resume', link: '/resume' },
-    { title: 'Contact', link: '/contact' },
+    { title: 'Home', linkto: '/' },
+    { title: 'Skills', linkto: '/skills' },
+    { title: 'Projects', linkto: '/projects' },
+    { title: 'Resume', linkto: '/resume' },
+    { title: 'Contact', linkto: '/contact' },
   ];
   const iconsMap = {
     up: GiHamburgerMenu,
@@ -77,10 +77,10 @@ const Navbar = () => {
           className={`flexJustifySpace menuNavLinks ${
             showMenu ? 'show' : 'hidden'
           }`}>
-          {NavsLinkList?.map(({ title, link }) => (
+          {NavsLinkList?.map(({ title, linkto }) => (
             <NavLink
-              key={title}
-              to={link}
+              key={title.toUpperCase()}
+              to={linkto}
               className={handleNavLinkClass}
               onClick={handleLinkClick}>
               {capitalizeSentence(title)}
