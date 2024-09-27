@@ -5,28 +5,33 @@ import { PiCopyrightFill } from 'react-icons/pi';
 import ZLogo from '../ZLogo';
 import FooterSocialMedia from './FooterSocialMedia';
 import FooterContactUs from './FooterContactUs';
+import { capitalizeSentence } from '../../config/utils';
 
-const Footer = ({ Fullname = 'Zaman Bin Ishfaq' }) => {
+const Footer = ({ Fullname }) => {
   const currentYear = new Date().getFullYear();
+
+  const Phone = '+92 343 5598805';
+  const Email = 'zamanmughal98+Dev@gmail.com';
 
   const socialMediaList = [
     {
-      link: 'https://www.facebook.com/zaman.mughal.1998/',
-      label: 'facebook',
+      linkto: 'https://www.facebook.com/zaman.mughal.1998/',
+      title: 'facebook',
     },
     {
-      link: 'https://www.instagram.com/zaman.mughal_/',
-      label: 'instagram',
+      linkto: 'https://www.instagram.com/zaman.mughal_/',
+      title: 'instagram',
     },
     {
-      link: 'https://www.linkedin.com/in/zaman-bin-ishfaq/',
-      label: 'linkedin',
+      linkto: 'https://www.linkedin.com/in/zaman-bin-ishfaq/',
+      title: 'linkedin',
     },
     {
-      link: 'https://github.com/zamanmughal98',
-      label: 'github',
+      linkto: 'https://github.com/zamanmughal98',
+      title: 'github',
     },
   ];
+
   return (
     <footer className="footerContainer">
       <section className=" containersWidth">
@@ -44,10 +49,7 @@ const Footer = ({ Fullname = 'Zaman Bin Ishfaq' }) => {
       <br />
 
       <section className="containersWidth flexWrap">
-        <FooterContactUs
-          Phone="+92 343 5598805"
-          Email="zamanmughal98+Dev@gmail.com"
-        />
+        <FooterContactUs Phone={Phone} Email={Email} />
       </section>
 
       <br />
@@ -56,10 +58,10 @@ const Footer = ({ Fullname = 'Zaman Bin Ishfaq' }) => {
         <div className="textIconWrapper">
           <PiCopyrightFill className="socialMediaIcons copyright" />
           <strong>
-            {currentYear} {Fullname}
+            {currentYear} {capitalizeSentence(Fullname)}
           </strong>
         </div>
-        <u> All Rights Reserved.</u>
+        <u> {capitalizeSentence('all rights reserved .')}</u>
       </section>
     </footer>
   );

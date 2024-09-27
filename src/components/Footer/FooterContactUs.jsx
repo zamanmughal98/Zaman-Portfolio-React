@@ -9,31 +9,31 @@ const FooterContactUs = ({ Phone, Email }) => {
 
   const ContactUsIcons = [
     {
-      link: `tel:${Phone}`,
-      label: 'Phone Number',
+      linkto: `tel:${Phone}`,
+      tite: 'Phone Number',
       Icon: IoCallSharp,
-      value: Phone,
+      content: Phone,
     },
     {
-      link: `mailto:${Email}?subject=${EmailSubject}`,
-      label: 'Email Address',
+      linkto: `mailto:${Email}?subject=${EmailSubject}`,
+      title: 'Email Address',
       Icon: MdEmail,
-      value: Email,
+      content: Email,
     },
   ];
 
   return (
     <>
-      {ContactUsIcons?.map(({ link, label, Icon, value }) => (
-        <section className="textIconWrapper" key={`${label}- div`}>
+      {ContactUsIcons?.map(({ linkto, tite, Icon, content }) => (
+        <section className="textIconWrapper" key={`${tite}- div`}>
           <ExternalLink
-            key={label}
-            href={link}
-            aria-label={label}
+            key={tite}
+            href={linkto}
+            aria-label={tite}
             className="socialMediaIcons">
             <Icon />
           </ExternalLink>
-          {value}
+          {content}
         </section>
       ))}
     </>

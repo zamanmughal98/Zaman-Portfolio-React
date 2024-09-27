@@ -14,13 +14,13 @@ const FooterSocialMedia = ({ socialMediaList }) => {
 
   return (
     <>
-      {socialMediaList?.map(({ link, label }) => (
+      {socialMediaList?.map(({ title, linkto }) => (
         <ExternalLink
-          key={label}
-          href={link}
-          aria-label={`${label} profile`}
+          key={title}
+          href={linkto}
+          aria-label={`${title} profile`}
           className="socialMediaIcons">
-          {socialMediaIcons[label.toLowerCase()]}
+          {socialMediaIcons[title.toLowerCase()]}
         </ExternalLink>
       ))}
     </>

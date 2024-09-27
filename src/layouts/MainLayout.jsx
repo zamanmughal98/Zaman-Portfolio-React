@@ -15,7 +15,7 @@ const MainLayout = () => {
       <main style={{ flexGrow: 1 }}>
         <Outlet />
       </main>
-      <Footer />
+      <Footer Fullname={'Zaman Bin Ishfaq'} />
     </section>
   );
 };
