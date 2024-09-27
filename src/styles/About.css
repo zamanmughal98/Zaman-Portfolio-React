@@ -43,6 +43,28 @@
   text-align: start;
 }
 
+.exploreMore {
+  all: unset;
+  font-size: 1rem;
+  color: #fff;
+  text-align: start;
+  border-bottom: 2px solid #ffffff;
+  padding-bottom: 0.25rem;
+  width: fit-content;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+
+.exploreMore:hover {
+  color: #3498db;
+  border-bottom-color: transparent;
+  transform: scale(1.08) translateY(-5px);
+}
+
+.exploreMore:active {
+  color: #3498db1b;
+  transform: scale(0.9) translateY(-5px);
+}
 .detailsLists {
   display: flex;
   flex-direction: column;
@@ -144,6 +166,10 @@
     padding: 0.6rem 1.25rem;
     width: 80%;
   }
+
+  .exploreMore {
+    font-size: 0.9rem;
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -151,6 +177,13 @@
     max-width: 12rem;
   }
 
+  .exploreMore {
+    font-size: 0.85rem;
+  }
+
+  .exploreMore:hover {
+    transform: scale(1.05) translateY(-5px);
+  }
   .aboutmeDownloadResumeButton {
     font-size: 0.85rem;
     padding: 0.5rem 1rem;
@@ -163,6 +196,10 @@
 }
 
 @media screen and (max-width: 320px) {
+  .exploreMore {
+    font-size: 0.7rem;
+  }
+
   .aboutmeDownloadResumeButton {
     font-size: 0.7rem;
     padding: 0.4rem 0.8rem;

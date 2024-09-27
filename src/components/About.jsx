@@ -14,14 +14,12 @@ import { BiLogoGmail } from 'react-icons/bi';
 import { useNavigate } from 'react-router-dom';
 import { capitalizeSentence } from '../config/utils';
 
-const About = ({
-  showSectionTitle = false,
-  introductorySentences,
-  details,
-}) => {
-  const aboutmeImage = showSectionTitle ? image1 : image2;
+const About = ({ isHomePage = false, introductorySentences, details }) => {
+  const navigate = useNavigate();
 
-  const ContentWrapper = showSectionTitle
+  const aboutmeImage = isHomePage ? image1 : image2;
+
+  const ContentWrapper = isHomePage
     ? 'aboutmeContentWrapper'
     : 'aboutmeContentWrapper_rowReverse';
 
@@ -29,7 +27,11 @@ const About = ({
     title: 'download resume',
     linkTo: '/resume',
   };
-  const navigate = useNavigate();
+
+  const exploreMoreButton = {
+    title: 'explore more ?',
+    linkTo: '/skills',
+  };
 
   const iconMapping = {
     name: <RiUser2Line />,
@@ -48,6 +50,14 @@ const About = ({
       <div className="aboutmeTextContainer">
         <div className="introductorySentences">{introductorySentences}</div>
 
+        {isHomePage && (
+          <button
+            className="exploreMore"
+            onClick={() => navigate(exploreMoreButton.linkTo)}>
+            {capitalizeSentence(exploreMoreButton.title)}
+          </button>
+        )}
+
         <section className="detailsLists">
           {details?.map(({ label, content }) => (
             <div className="detailsLists_Item" key={label + content}>
@@ -60,7 +70,7 @@ const About = ({
           ))}
         </section>
 
-        {showSectionTitle && (
+        {isHomePage && (
           <button
             className="aboutmeDownloadResumeButton"
             onClick={() => navigate(resumeButton.linkTo)}>

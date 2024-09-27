@@ -41,7 +41,7 @@ const HomePage = () => {
       <Hero sliderData={slides} />
       <HeadingwithShadow title={'about Me'} shadow={'About'} />
       <About
-        showSectionTitle
+        isHomePage
         introductorySentences={introductorySentences}
         details={myDetails}
       />
