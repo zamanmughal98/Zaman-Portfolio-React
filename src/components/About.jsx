@@ -10,6 +10,7 @@ import {
   RiCellphoneLine,
 } from 'react-icons/ri';
 import { BiLogoGmail } from 'react-icons/bi';
+import { IoMdArrowRoundForward } from 'react-icons/io';
 
 import { useNavigate } from 'react-router-dom';
 import { capitalizeSentence } from '../config/utils';
@@ -29,8 +30,9 @@ const About = ({ isHomePage = false, introductorySentences, details }) => {
   };
 
   const exploreMoreButton = {
-    title: 'explore more ?',
+    title: 'explore more',
     linkTo: '/skills',
+    icon: <IoMdArrowRoundForward />,
   };
 
   const iconMapping = {
@@ -55,6 +57,7 @@ const About = ({ isHomePage = false, introductorySentences, details }) => {
             className="exploreMore"
             onClick={() => navigate(exploreMoreButton.linkTo)}>
             {capitalizeSentence(exploreMoreButton.title)}
+            {exploreMoreButton.icon}
           </button>
         )}
 
