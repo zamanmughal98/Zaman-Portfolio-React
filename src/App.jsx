@@ -20,6 +20,7 @@ const App = () => {
     gotoRoute: 'home',
     linkto: '/',
   };
+
   const MyRouter = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<MainLayout />}>
@@ -46,6 +47,7 @@ const App = () => {
       </Route>,
     ),
   );
+
   return <RouterProvider router={MyRouter} />;
 };
 
