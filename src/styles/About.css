@@ -43,6 +43,12 @@
   text-align: start;
 }
 
+.seeMore {
+  cursor: pointer;
+  color: #3498db;
+  font-weight: 500;
+}
+
 .exploreMore {
   display: flex;
   place-items: center;

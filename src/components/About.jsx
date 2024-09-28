@@ -14,8 +14,11 @@ import { IoMdArrowRoundForward } from 'react-icons/io';
 
 import { useNavigate } from 'react-router-dom';
 import { capitalizeSentence } from '../config/utils';
+import { useState } from 'react';
 
 const About = ({ isHomePage = false, introductorySentences, details }) => {
+  const [isShowMore, setIsShowMore] = useState(true);
+
   const navigate = useNavigate();
 
   const aboutmeImage = isHomePage ? image1 : image2;
@@ -50,7 +53,28 @@ const About = ({ isHomePage = false, introductorySentences, details }) => {
       </div>
 
       <div className="aboutmeTextContainer">
-        <div className="introductorySentences">{introductorySentences}</div>
+        <div className="introductorySentences">
+          {isHomePage
+            ? introductorySentences
+            : isShowMore
+            ? introductorySentences.slice(0, 900) + '... '
+            : introductorySentences}
+
+          {!isHomePage && (
+            <span
+              onClick={() => setIsShowMore(!isShowMore)}
+              className="seeMore">
+              {isShowMore ? (
+                <>Show more</>
+              ) : (
+                <>
+                  <br />
+                  Show less
+                </>
+              )}
+            </span>
+          )}
+        </div>
 
         {isHomePage && (
           <button
