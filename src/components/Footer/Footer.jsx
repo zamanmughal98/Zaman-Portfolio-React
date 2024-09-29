@@ -2,7 +2,8 @@ import '../../styles/Footer.css';
 
 import { PiCopyrightFill } from 'react-icons/pi';
 
-import ZLogo from '../ZLogo';
+import ZLogo from '../../assets/svgs/ZLogo';
+
 import FooterSocialMedia from './FooterSocialMedia';
 import FooterContactUs from './FooterContactUs';
 import { capitalizeSentence } from '../../config/utils';

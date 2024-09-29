@@ -3,11 +3,12 @@ import '../styles/Navbar.css';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { IoCloseCircleOutline } from 'react-icons/io5';
 
+import ZLogo from '../assets/svgs/ZLogo';
+
 import { NavLink } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 import { capitalizeSentence, debounce } from '../config/utils';
-import ZLogo from './ZLogo';
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);

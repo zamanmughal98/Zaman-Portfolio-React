@@ -1,5 +1,5 @@
-import '../styles/Navbar.css';
-import '../styles/Zlogo.css';
+import '../../styles/Navbar.css';
+import '../../styles/Zlogo.css';
 
 const ZLogo = ({
   color = '#40C0E7',
