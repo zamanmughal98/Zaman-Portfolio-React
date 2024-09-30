@@ -1,10 +1,11 @@
 import '../styles/SkillsPage.css';
 
 import About from '../components/About';
+import Skillset from '../components/Skillset';
 
 const HomePage = () => {
   const introductorySentences =
-    ' A dedicated MERN Stack Web Engineer with over two years of experience in designing and developing dynamic web applications. With a strong foundation in both frontend and backend technologies, I specialize in creating robust, scalable, and user-friendly solutions.';
+    ' A dedicated MERN Stack Web Engineer with over two years of experience in designing and developing dynamic web applications. With a strong foundation in both frontend and backend technologies, I specialize in creating robust, scalable, and user-friendly solutions.  A dedicated MERN Stack Web Engineer with over two years of experience in designing and developing dynamic web applications. With a strong foundation in both frontend and backend technologies, I specialize in creating robust, scalable, and user-friendly solutions.  A dedicated MERN Stack Web Engineer with over two years of experience in designing and developing dynamic web applications. With a strong foundation in both frontend and backend technologies, I specialize in creating robust, scalable, and user-friendly solutions.  A dedicated MERN Stack Web Engineer with over two years of experience in designing and developing dynamic web applications. With a strong foundation in both frontend and backend technologies, I specialize in creating robust, scalable, and user-friendly solutions.  A dedicated MERN Stack Web Engineer with over two years of experience in designing and developing dynamic web applications. With a strong foundation in both frontend and backend technologies, I specialize in creating robust, scalable, and user-friendly solutions.  A dedicated MERN Stack Web Engineer with over two years of experience in designing and developing dynamic web applications. With a strong foundation in both frontend and backend technologies, I specialize in creating robust, scalable, and user-friendly solutions.';
 
   const myDetails = [
     { label: 'Name', content: 'Zaman Bin Ishfaq' },
@@ -19,6 +20,10 @@ const HomePage = () => {
         introductorySentences={introductorySentences}
         details={myDetails}
       />
+
+      <br />
+
+      <Skillset />
     </section>
   );
 };
