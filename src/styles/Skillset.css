@@ -1,0 +1,153 @@
+.skillSetContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background: #3498db1e;
+  border-radius: 20px;
+  padding: 2.5rem 1.25rem;
+  box-sizing: border-box;
+  gap: 2rem;
+}
+
+.skillsSetsFilterBox {
+  display: flex;
+  flex-direction: row;
+  align-self: flex-start;
+  padding: 1rem;
+  color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+}
+
+.skillsSetsFilterButton {
+  font-size: 1rem;
+  padding: 0.65rem;
+  background: transparent;
+  color: white;
+  font-weight: 600;
+  transition: all 0.5s ease-in-out;
+}
+
+.skillsSetsFilterButton.active {
+  font-weight: bold;
+  background: #3498db;
+  color: #fff;
+  transform: translateY(-5px);
+}
+
+.skillsSetsFilterButton:hover {
+  transform: scale(1.08) translateY(-5px);
+}
+
+.skillsSetsFilterButton:active {
+  transform: scale(0.9) translateY(-5px);
+}
+
+.skillsSetsListBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.skillCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 9rem;
+  height: 9rem;
+  border-radius: 0.6rem;
+  padding: 1rem;
+  box-sizing: border-box;
+  background: rgba(52, 152, 219, 0.15);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+}
+
+.skillCard:hover {
+  filter: brightness(80%);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+  transform: translateY(-5px);
+}
+
+.skillIcon {
+  font-size: 4rem;
+  transition: all 0.5s ease-in-out;
+  color: #3498db;
+}
+
+.skillCard:hover .skillIcon {
+  font-size: 3rem;
+  color: #fff;
+}
+
+.skillName {
+  position: absolute;
+  bottom: -50px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  opacity: 1;
+  transition: all 0.5s ease-in-out;
+}
+
+.skillCard:hover .skillName {
+  bottom: 10px;
+  opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+  .skillSetContainer {
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 0;
+  }
+  .skillCard {
+    width: 9rem;
+    height: 9rem;
+  }
+
+  .skillIcon {
+    font-size: 3rem;
+  }
+
+  .skillsSetsFilterBox {
+    flex-direction: column;
+    justify-content: center;
+    align-self: flex-start;
+    width: 60%;
+  }
+
+  .skillsSetsFilterButton {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .skillCard {
+    width: 6rem;
+    height: 6rem;
+  }
+
+  .skillIcon {
+    font-size: 2.5rem;
+  }
+
+  .skillName {
+    font-size: 0.85rem;
+  }
+
+  .skillsSetsFilterButton {
+    font-size: 0.85rem;
+  }
+}

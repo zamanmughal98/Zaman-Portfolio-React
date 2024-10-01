@@ -1,7 +1,7 @@
 import '../styles/SkillsPage.css';
 
 import About from '../components/About';
-import Skillset from '../components/Skillset';
+import Skillset from '../components/skillSet/Skillset';
 
 const HomePage = () => {
   const introductorySentences =
