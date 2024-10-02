@@ -1,7 +1,9 @@
 import '../styles/SkillsPage.css';
 
+import HeadingwithShadow from '../components/HeadingwithShadow';
+
 import About from '../components/About';
-import Skillset from '../components/skillSet/Skillset';
+import Skill from '../components/skillSet/Skill';
 
 const HomePage = () => {
   const introductorySentences =
@@ -22,8 +24,8 @@ const HomePage = () => {
       />
 
       <br />
-
-      <Skillset />
+      <HeadingwithShadow title="Skills" shadow="Skills" />
+      <Skill />
     </section>
   );
 };
