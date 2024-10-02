@@ -43,9 +43,6 @@ export const skillsList = [
 ];
 
 export const filterOptions = [
+  ...new Set(skillsList.map((myskill) => myskill.type)),
   'All',
-  'Frontend',
-  'Backend',
-  'Database',
-  'Development-Tools',
-];
+].sort();
