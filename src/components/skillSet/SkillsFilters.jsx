@@ -1,5 +1,7 @@
 import { filterOptions } from './Skills.iconsData';
 
+import { capitalizeSentence } from '../../config/utils';
+
 const SkillsFilters = ({ onclickHandler, currentFilter, length }) => {
   return (
     <div className="skillsSetsFilterBox">
@@ -10,7 +12,7 @@ const SkillsFilters = ({ onclickHandler, currentFilter, length }) => {
             currentFilter === option && 'active'
           }`}
           onClick={() => onclickHandler(option)}>
-          {option.toLowerCase()}
+          {capitalizeSentence(option)}
           {option === currentFilter && (
             <>
               {' '}
