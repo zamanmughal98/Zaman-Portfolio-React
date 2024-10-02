@@ -31,6 +31,9 @@
   transition: all 0.5s ease-in-out;
 }
 
+.skillsNumbering {
+  font-weight: 100;
+}
 .skillsSetsFilterButton.active {
   font-weight: bold;
   background: #3498db;
@@ -107,47 +110,47 @@
 
 @media screen and (max-width: 768px) {
   .skillSetContainer {
-    flex-direction: row;
-    justify-content: space-around;
-    gap: 0;
-  }
-  .skillCard {
-    width: 9rem;
-    height: 9rem;
-  }
-
-  .skillIcon {
-    font-size: 3rem;
+    padding: 1.25rem;
   }
 
   .skillsSetsFilterBox {
     flex-direction: column;
-    justify-content: center;
-    align-self: flex-start;
-    width: 60%;
+    gap: 0.5rem;
   }
 
   .skillsSetsFilterButton {
     font-size: 0.9rem;
-    padding: 0.5rem;
+    padding: 0.5rem 1rem;
+    width: 100%;
+    text-align: start;
+  }
+
+  .skillIcon {
+    font-size: 3.5rem;
+  }
+
+  .skillCard:hover .skillIcon {
+    font-size: 2.75rem;
+    color: #fff;
   }
 }
 
 @media screen and (max-width: 480px) {
-  .skillCard {
-    width: 6rem;
-    height: 6rem;
+  .skillsSetsFilterButton {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.75rem;
   }
 
   .skillIcon {
     font-size: 2.5rem;
   }
 
-  .skillName {
-    font-size: 0.85rem;
+  .skillCard:hover .skillIcon {
+    font-size: 2.2rem;
+    color: #fff;
   }
 
-  .skillsSetsFilterButton {
-    font-size: 0.85rem;
+  .skillName {
+    font-size: 0.8rem;
   }
 }
