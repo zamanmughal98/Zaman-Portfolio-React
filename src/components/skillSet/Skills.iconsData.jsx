@@ -1,16 +1,57 @@
-import { LiaHtml5, LiaCss3Alt } from 'react-icons/lia';
+import { LiaHtml5, LiaCss3Alt, LiaGithubAlt } from 'react-icons/lia';
+
 import { IoLogoJavascript, IoLogoNodejs } from 'react-icons/io5';
-import { SiTypescript } from 'react-icons/si';
-import { FaNode } from 'react-icons/fa6';
+import {
+  SiTypescript,
+  SiNestjs,
+  SiMongodb,
+  SiGraphql,
+  SiPostman,
+  SiYarn,
+  SiNetlify,
+  SiJest,
+  SiCypress,
+  SiMongoose,
+  SiMui,
+  SiJsonwebtokens,
+  SiNodemon,
+  SiEslint,
+  SiPrettier,
+  SiVercel,
+} from 'react-icons/si';
+import {
+  FaNode,
+  FaSquareGithub,
+  FaSlack,
+  FaNpm,
+  FaBootstrap,
+} from 'react-icons/fa6';
 import { GrReactjs } from 'react-icons/gr';
-import { SiNestjs } from 'react-icons/si';
 import { RiFirebaseFill } from 'react-icons/ri';
-import { SiMongodb } from 'react-icons/si';
-import { SiGraphql } from 'react-icons/si';
-import { FaSquareGithub } from 'react-icons/fa6';
 import { AiOutlineApi } from 'react-icons/ai';
+import { VscVscodeInsiders } from 'react-icons/vsc';
+import { DiReact } from 'react-icons/di';
 
 export const iconMapping = {
+  'vs code': <VscVscodeInsiders />,
+  github: <LiaGithubAlt />,
+  postman: <SiPostman />,
+  slack: <FaSlack />,
+  npm: <FaNpm />,
+  yarn: <SiYarn />,
+  vercel: <SiVercel />,
+  netlify: <SiNetlify />,
+  jest: <SiJest />,
+  cypress: <SiCypress />,
+  bootstrap: <FaBootstrap />,
+  mongoose: <SiMongoose />,
+  'context-api': <DiReact />,
+  'material-ui': <SiMui />,
+  jwt: <SiJsonwebtokens />,
+  nodemon: <SiNodemon />,
+  eslint: <SiEslint />,
+  prettier: <SiPrettier />,
+
   html: <LiaHtml5 />,
   css: <LiaCss3Alt />,
   javascript: <IoLogoJavascript />,
@@ -27,22 +68,41 @@ export const iconMapping = {
 };
 
 export const skillsList = [
-  { skill: 'HTML', type: 'Frontend' },
-  { skill: 'CSS', type: 'Frontend' },
-  { skill: 'JavaScript', type: 'Frontend' },
-  { skill: 'Typescript', type: 'Frontend' },
-  { skill: 'ReactJs', type: 'Frontend' },
-  { skill: 'Express', type: 'Backend' },
-  { skill: 'NodeJs', type: 'Backend' },
-  { skill: 'NestJs', type: 'Backend' },
-  { skill: 'Rest APIs', type: 'Backend' },
-  { skill: 'GraphQL', type: 'Backend' },
-  { skill: 'Mongo DB', type: 'Database' },
-  { skill: 'Firebase & FireStore', type: 'Database' },
-  { skill: 'Version Control', type: 'Development-Tools' },
+  { title: 'HTML', type: 'Frontend' },
+  { title: 'CSS', type: 'Frontend' },
+  { title: 'JavaScript', type: 'Frontend' },
+  { title: 'Typescript', type: 'Frontend' },
+  { title: 'ReactJs', type: 'Frontend' },
+  { title: 'Express', type: 'Backend' },
+  { title: 'NodeJs', type: 'Backend' },
+  { title: 'NestJs', type: 'Backend' },
+  { title: 'Rest APIs', type: 'Backend' },
+  { title: 'GraphQL', type: 'Backend' },
+  { title: 'Mongo DB', type: 'Database' },
+  { title: 'Firebase & FireStore', type: 'Database' },
+];
+export const technologiesList = [
+  { title: 'VS Code', type: 'Development-Tools' },
+  { title: 'GitHub', type: 'Development-Tools' },
+  { title: 'Postman', type: 'Development-Tools' },
+  { title: 'Slack', type: 'Collaboration-Tools' },
+  { title: 'NPM', type: 'Package-Manager' },
+  { title: 'Yarn', type: 'Package-Manager' },
+  { title: 'Vercel', type: 'Deployment-Platform' },
+  { title: 'Netlify', type: 'Deployment-Platform' },
+  { title: 'Jest', type: 'Testing-Tools' },
+  { title: 'Cypress', type: 'Testing-Tools' },
+  { title: 'Bootstrap', type: 'CSS-Framework' },
+  { title: 'Mongoose', type: 'ODM-Library' },
+  { title: 'Context-Api', type: 'State-Management' },
+  { title: 'Material-UI', type: 'CSS-Framework' },
+  { title: 'JWT', type: 'Authentication' },
+  { title: 'Nodemon', type: 'Development-Tools' },
+  { title: 'ESLint', type: 'Development-Tools' },
+  { title: 'Prettier', type: 'Development-Tools' },
 ];
 
 export const filterOptions = [
-  ...new Set(skillsList.map((myskill) => myskill.type)),
   'All',
-].sort();
+  ...new Set(skillsList.map((myskill) => myskill.type)),
+]
