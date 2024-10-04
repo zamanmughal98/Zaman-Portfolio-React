@@ -1,9 +1,9 @@
 import { technologiesList } from './IconsData';
 
-import SkillsListing from './ItemListing';
+import ItemListing from './ItemListing';
 
 const MyTools = () => {
-  return <SkillsListing List={technologiesList} />;
+  return <ItemListing List={technologiesList} />;
 };
 
 export default MyTools;

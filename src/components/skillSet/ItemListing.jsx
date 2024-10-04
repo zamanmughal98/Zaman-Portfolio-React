@@ -6,7 +6,7 @@ const ItemListing = ({ List }) => {
       {List?.map(({ title }) => (
         <div className="listCard" key={title} aria-label={title}>
           <span className="listIcon">{iconMapping[title.toLowerCase()]}</span>
-          <span className="ListItemsTitle">{title.toUpperCase()}</span>
+          <span className="listItemsTitle">{title.toUpperCase()}</span>
         </div>
       ))}
     </div>
