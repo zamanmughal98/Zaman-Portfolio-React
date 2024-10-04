@@ -1,4 +1,4 @@
-import { technologiesList } from './Skills.iconsData';
+import { technologiesList } from './IconsData';
 
 import SkillsListing from './ItemListing';
 

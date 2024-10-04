@@ -1,6 +1,6 @@
 import '../../styles//MySkills.css';
 
-import { skillsList } from './Skills.iconsData';
+import { skillsList } from './IconsData';
 
 import { useState, useMemo } from 'react';
 
