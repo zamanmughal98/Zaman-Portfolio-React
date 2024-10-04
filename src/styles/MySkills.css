@@ -49,7 +49,7 @@
   transform: scale(0.9) translateY(-5px);
 }
 
-.skillsSetsListBox {
+.listBox {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -58,7 +58,7 @@
   gap: 2rem;
 }
 
-.skillCard {
+.listCard {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -76,24 +76,24 @@
   transition: all 0.5s ease-in-out;
 }
 
-.skillCard:hover {
+.listCard:hover {
   filter: brightness(80%);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
   transform: translateY(-5px);
 }
 
-.skillIcon {
+.listIcon {
   font-size: 4rem;
   transition: all 0.5s ease-in-out;
   color: #3498db;
 }
 
-.skillCard:hover .skillIcon {
+.listCard:hover .listIcon {
   font-size: 3rem;
   color: #fff;
 }
 
-.skillName {
+.listItemsTitle {
   position: absolute;
   bottom: -50px;
   font-size: 1rem;
@@ -103,7 +103,7 @@
   transition: all 0.5s ease-in-out;
 }
 
-.skillCard:hover .skillName {
+.listCard:hover .listItemsTitle {
   bottom: 10px;
   opacity: 1;
 }
@@ -125,11 +125,11 @@
     text-align: start;
   }
 
-  .skillIcon {
+  .listIcon {
     font-size: 3.5rem;
   }
 
-  .skillCard:hover .skillIcon {
+  .listCard:hover .listIcon {
     font-size: 2.75rem;
     color: #fff;
   }
@@ -141,16 +141,16 @@
     padding: 0.4rem 0.75rem;
   }
 
-  .skillIcon {
+  .listIcon {
     font-size: 2.5rem;
   }
 
-  .skillCard:hover .skillIcon {
+  .listCard:hover .listIcon {
     font-size: 2.2rem;
     color: #fff;
   }
 
-  .skillName {
+  .listItemsTitle {
     font-size: 0.8rem;
   }
 }

@@ -2,11 +2,11 @@ import { iconMapping } from './Skills.iconsData';
 
 const ItemListing = ({ List }) => {
   return (
-    <div className="skillsSetsListBox">
+    <div className="listBox">
       {List?.map(({ title }) => (
-        <div className="skillCard" key={title} aria-label={title}>
-          <span className="skillIcon">{iconMapping[title.toLowerCase()]}</span>
-          <span className="skillName">{title.toUpperCase()}</span>
+        <div className="listCard" key={title} aria-label={title}>
+          <span className="listIcon">{iconMapping[title.toLowerCase()]}</span>
+          <span className="ListItemsTitle">{title.toUpperCase()}</span>
         </div>
       ))}
     </div>

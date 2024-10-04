@@ -1,4 +1,4 @@
-import '../../styles/Skill.css';
+import '../../styles//MySkills.css';
 
 import { skillsList } from './Skills.iconsData';
 
