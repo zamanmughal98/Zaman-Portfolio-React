@@ -5,9 +5,9 @@ import { skillsList } from './Skills.iconsData';
 import { useState, useMemo } from 'react';
 
 import SkillsFilters from './SkillsFilters';
-import SkillsListing from './SkillsListing';
+import ItemListing from './ItemListing';
 
-const Skill = () => {
+const MySkills = () => {
   const [filter, setFilter] = useState('All');
 
   const filteredSkills = useMemo(
@@ -23,9 +23,9 @@ const Skill = () => {
         length={filteredSkills.length}
       />
 
-      <SkillsListing skills={filteredSkills} />
+      <ItemListing List={filteredSkills} />
     </section>
   );
 };
 
-export default Skill;
+export default MySkills;
