@@ -3,7 +3,8 @@ import '../styles/SkillsPage.css';
 import HeadingwithShadow from '../components/HeadingwithShadow';
 
 import About from '../components/About';
-import Skill from '../components/skillSet/Skill';
+import MySkills from '../components/skillSet/MySkills';
+import MyTools from '../components/skillSet/MyTools';
 
 const HomePage = () => {
   const introductorySentences =
@@ -25,7 +26,11 @@ const HomePage = () => {
 
       <br />
       <HeadingwithShadow title="Skills" shadow="Skills" />
-      <Skill />
+      <MySkills />
+
+      <br />
+      <HeadingwithShadow title="Tools I use" shadow="Tools" />
+      <MyTools />
     </section>
   );
 };
