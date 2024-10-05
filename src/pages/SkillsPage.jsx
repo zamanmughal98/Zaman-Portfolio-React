@@ -5,6 +5,7 @@ import HeadingwithShadow from '../components/HeadingwithShadow';
 import About from '../components/About';
 import MySkills from '../components/skillSet/MySkills';
 import MyTools from '../components/skillSet/MyTools';
+import MyServices from '../components/skillSet/MyServices';
 
 const HomePage = () => {
   const introductorySentences =
@@ -29,8 +30,15 @@ const HomePage = () => {
       <MySkills />
 
       <br />
-      <HeadingwithShadow title="Tools I use" shadow="Tools" />
+      <HeadingwithShadow title="Tools" shadow="Tools" />
+      <br />
       <MyTools />
+
+      <br />
+      <HeadingwithShadow title="Services" shadow="Services" />
+      <MyServices />
+
+      <br />
     </section>
   );
 };
