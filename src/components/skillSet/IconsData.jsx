@@ -30,8 +30,25 @@ import { RiFirebaseFill } from 'react-icons/ri';
 import { AiOutlineApi } from 'react-icons/ai';
 import { VscVscodeInsiders } from 'react-icons/vsc';
 import { DiReact } from 'react-icons/di';
+import { FaReact, FaNodeJs, FaGitAlt } from 'react-icons/fa';
+import { MdDesignServices } from 'react-icons/md';
+import { FiPackage } from 'react-icons/fi';
+import { TbDatabaseCog } from 'react-icons/tb';
+import { TfiLayoutSlider, TfiLayoutAccordionSeparated } from 'react-icons/tfi';
+import { CgWebsite } from 'react-icons/cg';
 
 export const iconMapping = {
+  'frontend development': <TfiLayoutSlider />,
+  'component development': <TfiLayoutAccordionSeparated />,
+  'html/css landing page': <CgWebsite />,
+  'design to code conversion': <MdDesignServices />,
+  'frontend optimization': <FiPackage />,
+  'backend development': <FaNodeJs />,
+  'graphql api development': <SiGraphql />,
+  'database management': <TbDatabaseCog />,
+  'mern stack development': <FaReact />,
+  'version control & collaboration': <FaGitAlt />,
+
   'vs code': <VscVscodeInsiders />,
   github: <LiaGithubAlt />,
   postman: <SiPostman />,
