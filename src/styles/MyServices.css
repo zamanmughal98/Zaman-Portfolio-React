@@ -1,0 +1,31 @@
+.myServicesContainer {
+  display: flex;
+  /* flex-direction: row; */
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background: #3498db10;
+  border: 2px solid #3498db;
+  border-radius: 20px;
+  padding: 2.5rem 1.25rem;
+  box-sizing: border-box;
+  gap: 2rem;
+}
+
+.serviceCardContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.serviceIcon {
+  color: #3498db;
+}
+
+.serviceContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
