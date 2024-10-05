@@ -99,7 +99,60 @@ export const technologiesList = [
   { title: 'Prettier', type: 'Development-Tools' },
 ];
 
+export const servicesList = [
+  {
+    title: 'Frontend Development',
+    description:
+      'Building responsive UIs using React, HTML, CSS, and JavaScript.',
+  },
+  {
+    title: 'Component Development',
+    description:
+      'Creating reusable components using React JavaScript and TypeScript.',
+  },
+  {
+    title: 'HTML/CSS Landing Page',
+    description:
+      'Creating visually stunning, mobile-friendly landing pages using HTML and CSS. Optimized for performance, accessibility, and SEO.',
+  },
+  {
+    title: 'Design to Code Conversion',
+    description:
+      'Converting designs (Figma, Adobe XD, PSD, or Sketch) to functional React components or static HTML/CSS.',
+  },
+  {
+    title: 'Frontend Optimization',
+    description:
+      'Optimizing website performance through techniques such as lazy loading, code splitting, and asset minification. Improving site speed and overall user experience.',
+  },
+  {
+    title: 'Backend Development',
+    description:
+      'Building RESTful APIs with Node.js and Express, including authentication with JWT.',
+  },
+  {
+    title: 'GraphQL API Development',
+    description:
+      'Implementing flexible APIs using GraphQL for efficient data querying.',
+  },
+  {
+    title: 'Database Management',
+    description:
+      'Designing and managing databases with MongoDB and Mongoose, with optimized data modeling.',
+  },
+  {
+    title: 'Mern Stack Development',
+    description:
+      'Building complete MERN stack applications, connecting frontend to backend.',
+  },
+  {
+    title: 'Version Control & Collaboration',
+    description:
+      'Managing version control with Git and GitHub, and collaborating via pull requests.',
+  },
+];
+
 export const filterOptions = [
   'All',
   ...new Set(skillsList.map((myskill) => myskill.type)),
-]
+];
