@@ -96,6 +96,7 @@ export const skillsList = [
   { title: 'Mongo DB', type: 'Database' },
   { title: 'Firebase & FireStore', type: 'Database' },
 ];
+
 export const technologiesList = [
   { title: 'VS Code', type: 'Development-Tools' },
   { title: 'GitHub', type: 'Development-Tools' },
