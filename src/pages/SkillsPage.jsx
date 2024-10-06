@@ -30,13 +30,14 @@ const HomePage = () => {
       <MySkills />
 
       <br />
+      <HeadingwithShadow title="Services" shadow="Services" />
+      <br />
+      <MyServices />
+
+      <br />
       <HeadingwithShadow title="Tools" shadow="Tools" />
       <br />
       <MyTools />
-
-      <br />
-      <HeadingwithShadow title="Services" shadow="Services" />
-      <MyServices />
 
       <br />
     </section>
