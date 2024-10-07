@@ -1,6 +1,6 @@
 import '../../styles//MySkills.css';
 
-import { skillsList } from './IconsData';
+import { skillsList, filterOptions } from './IconsData';
 
 import { useState, useMemo } from 'react';
 
@@ -8,7 +8,7 @@ import SkillsFilters from './SkillsFilters';
 import ItemListing from './ItemListing';
 
 const MySkills = () => {
-  const [filter, setFilter] = useState('All');
+  const [filter, setFilter] = useState(filterOptions.at(1));
 
   const filteredSkills = useMemo(
     () => skillsList.filter(({ type }) => filter === 'All' || type === filter),
