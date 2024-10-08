@@ -15,6 +15,16 @@ const MyServices = () => {
           </div>
         </section>
       ))}
+      </div>
+
+      {isVisible && (
+        <button
+          className="seeMoreServiesButton"
+          onClick={seeMoreButton.onclickHandler}>
+          {capitalizeSentence(seeMoreButton.title)}
+          {seeMoreButton.icon}
+        </button>
+      )}
     </section>
   );
 };

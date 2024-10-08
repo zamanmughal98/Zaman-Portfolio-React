@@ -84,6 +84,38 @@
   font-size: 1rem;
 }
 
+.seeMoreServiesButton {
+  display: flex;
+  gap: 0.25rem;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 1rem;
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  color: white;
+  background: #3498db1e;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  white-space: nowrap;
+  transition: all 0.5s ease-in-out;
+}
+
+.seeMoreServiesButton:hover {
+  background: #3498db2e;
+  color: white;
+  transform: scale(1.08) translateY(-5px);
+}
+
+.seeMoreServiesButton:active {
+  background: transparent;
+  color: white;
+  transform: scale(0.9) translateY(-5px);
+}
+
+.seeMoreServiesButtonIcon {
+  font-size: 1.25rem;
+}
+
 @media screen and (max-width: 768px) {
   .myServicesContainer {
     padding: 1.25rem;
@@ -104,6 +136,16 @@
   .serviceDescription {
     font-size: 0.9rem;
   }
+
+  .seeMoreServiesButton {
+    font-size: 0.9rem;
+    padding: 0.6rem;
+    width: 80%;
+  }
+
+  .seeMoreServiesButtonIcon {
+    font-size: 1.2rem;
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -117,5 +159,30 @@
 
   .serviceDescription {
     font-size: 0.85rem;
+  }
+
+  .seeMoreServiesButton {
+    font-size: 0.85rem;
+    padding: 0.5rem;
+    width: 100%;
+  }
+
+  .seeMoreServiesButton:hover {
+    transform: scale(1.05) translateY(-5px);
+  }
+
+  .seeMoreServiesButtonIcon {
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .seeMoreServiesButton {
+    font-size: 0.7rem;
+    padding: 0.4rem;
+  }
+
+  .seeMoreServiesButtonIcon {
+    font-size: 1rem;
   }
 }
