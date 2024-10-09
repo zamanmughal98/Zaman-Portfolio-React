@@ -1,6 +1,6 @@
 import '../../styles/MyServices.css';
 
-import { MdUnfoldMoreDouble } from 'react-icons/md';
+import { MdUnfoldMore } from 'react-icons/md';
 
 import { servicesList, iconMapping } from './IconsData';
 import { capitalizeSentence } from '../../config/utils.js';
@@ -19,7 +19,7 @@ const MyServices = () => {
   const seeMoreButton = {
     title: 'see more',
     onclickHandler: seeMoreHandler,
-    icon: <MdUnfoldMoreDouble className="seeMoreServiesButtonIcon" />,
+    icon: <MdUnfoldMore className="seeMoreServiesButtonIcon" />,
   };
 
   return (
