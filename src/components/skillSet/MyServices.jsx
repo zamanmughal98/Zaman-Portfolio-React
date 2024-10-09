@@ -2,48 +2,19 @@ import '../../styles/MyServices.css';
 
 import { MdUnfoldMoreDouble } from 'react-icons/md';
 
-import { useState, useEffect } from 'react';
-
 import { servicesList, iconMapping } from './IconsData';
-import { capitalizeSentence, debounce } from '../../config/utils.js';
+import { capitalizeSentence } from '../../config/utils.js';
+
+import useSeeMore from '../../hooks/useSeeMore.js';
 
 const MyServices = () => {
   const nextIncrementof = 5;
 
-  const [visibleItems, setVisibleItems] = useState(nextIncrementof);
-  const [isVisible, setIsVisible] = useState(true);
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
-  const seeMoreHandler = () => {
-    const remainingItems = servicesList.length - visibleItems;
-
-    if (remainingItems <= nextIncrementof) {
-      setVisibleItems(servicesList.length);
-      setIsVisible(false);
-    } else {
-      setVisibleItems(visibleItems + nextIncrementof);
-    }
-  };
-
-  useEffect(() => {
-    const handleResize = debounce(() => {
-      setWindowWidth(window.innerWidth);
-    }, 300);
-
-    window.addEventListener('resize', handleResize);
-
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  useEffect(() => {
-    if (windowWidth > 768) {
-      setVisibleItems(servicesList.length);
-      setIsVisible(false);
-    } else {
-      setVisibleItems(nextIncrementof);
-      setIsVisible(servicesList.length > nextIncrementof);
-    }
-  }, [windowWidth]);
+  const {
+    visibleItems,
+    isVisible: isButtonVisible,
+    seeMoreHandler,
+  } = useSeeMore(servicesList, nextIncrementof);
 
   const seeMoreButton = {
     title: 'see more',
@@ -71,7 +42,7 @@ const MyServices = () => {
           ))}
       </div>
 
-      {isVisible && (
+      {isButtonVisible && (
         <button
           className="seeMoreServiesButton"
           onClick={seeMoreButton.onclickHandler}>
