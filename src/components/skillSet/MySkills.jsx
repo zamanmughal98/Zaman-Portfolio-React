@@ -1,8 +1,14 @@
 import '../../styles//MySkills.css';
 
+import { MdUnfoldMore } from 'react-icons/md';
+
 import { skillsList, filterOptions } from './IconsData';
 
 import { useState, useMemo } from 'react';
+
+import useSeeMore from '../../hooks/useSeeMore.js';
+
+import { capitalizeSentence } from '../../config/utils.js';
 
 import SkillsFilters from './SkillsFilters';
 import ItemListing from './ItemListing';
@@ -15,6 +21,20 @@ const MySkills = () => {
     [filter],
   );
 
+  const nextIncrementof = 5;
+
+  const {
+    visibleItems,
+    isVisible: isButtonVisible,
+    seeMoreHandler,
+  } = useSeeMore(filteredSkills, nextIncrementof);
+
+  const seeMoreButton = {
+    title: 'see more',
+    onclickHandler: seeMoreHandler,
+    icon: <MdUnfoldMore className="seeMoreSkillButtonIcon" />,
+  };
+
   return (
     <section className="skillSetContainer">
       <SkillsFilters
@@ -23,7 +43,16 @@ const MySkills = () => {
         length={filteredSkills.length}
       />
 
-      <ItemListing List={filteredSkills} />
+      <ItemListing List={filteredSkills.slice(0, visibleItems)} />
+
+      {isButtonVisible && (
+        <button
+          className="seeMoreSkillButton"
+          onClick={seeMoreButton.onclickHandler}>
+          {capitalizeSentence(seeMoreButton.title)}
+          {seeMoreButton.icon}
+        </button>
+      )}
     </section>
   );
 };
