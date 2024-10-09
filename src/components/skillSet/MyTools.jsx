@@ -1,6 +1,6 @@
 import '../../styles/MySkills.css';
 
-import { MdUnfoldMore } from 'react-icons/md';
+import { VscTools } from 'react-icons/vsc';
 
 import { technologiesList } from './IconsData';
 
@@ -22,7 +22,7 @@ const MyTools = () => {
   const seeMoreButton = {
     title: 'see more tools',
     onclickHandler: seeMoreHandler,
-    icon: <MdUnfoldMore className="seeMoreSkillButtonIcon" />,
+    icon: <VscTools className="seeMoreSkillButtonIcon" />,
   };
   return (
     <>

@@ -1,6 +1,6 @@
 import '../../styles/MyServices.css';
 
-import { MdUnfoldMore } from 'react-icons/md';
+import { RiBookOpenFill } from 'react-icons/ri';
 
 import { servicesList, iconMapping } from './IconsData';
 import { capitalizeSentence } from '../../config/utils.js';
@@ -17,9 +17,9 @@ const MyServices = () => {
   } = useSeeMore(servicesList, nextIncrementof);
 
   const seeMoreButton = {
-    title: 'see more',
+    title: 'see more services',
     onclickHandler: seeMoreHandler,
-    icon: <MdUnfoldMore className="seeMoreServiesButtonIcon" />,
+    icon: <RiBookOpenFill className="seeMoreServiesButtonIcon" />,
   };
 
   return (

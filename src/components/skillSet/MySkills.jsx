@@ -1,6 +1,6 @@
 import '../../styles//MySkills.css';
 
-import { MdUnfoldMore } from 'react-icons/md';
+import { PiTargetDuotone } from 'react-icons/pi';
 
 import { skillsList, filterOptions } from './IconsData';
 
@@ -14,7 +14,7 @@ import SkillsFilters from './SkillsFilters';
 import ItemListing from './ItemListing';
 
 const MySkills = () => {
-  const [filter, setFilter] = useState(filterOptions.at(1));
+  const [filter, setFilter] = useState(filterOptions.at(0));
 
   const filteredSkills = useMemo(
     () => skillsList.filter(({ type }) => filter === 'All' || type === filter),
@@ -30,9 +30,9 @@ const MySkills = () => {
   } = useSeeMore(filteredSkills, nextIncrementof);
 
   const seeMoreButton = {
-    title: 'see more',
+    title: 'see more skills',
     onclickHandler: seeMoreHandler,
-    icon: <MdUnfoldMore className="seeMoreSkillButtonIcon" />,
+    icon: <PiTargetDuotone className="seeMoreSkillButtonIcon" />,
   };
 
   return (
