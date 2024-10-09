@@ -8,18 +8,20 @@ import { servicesList, iconMapping } from './IconsData';
 import { capitalizeSentence, debounce } from '../../config/utils.js';
 
 const MyServices = () => {
-  const [visibleItems, setVisibleItems] = useState(4);
+  const nextIncrementof = 5;
+
+  const [visibleItems, setVisibleItems] = useState(nextIncrementof);
   const [isVisible, setIsVisible] = useState(true);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   const seeMoreHandler = () => {
     const remainingItems = servicesList.length - visibleItems;
 
-    if (remainingItems <= 4) {
+    if (remainingItems <= nextIncrementof) {
       setVisibleItems(servicesList.length);
       setIsVisible(false);
     } else {
-      setVisibleItems(visibleItems + 4);
+      setVisibleItems(visibleItems + nextIncrementof);
     }
   };
 
@@ -38,8 +40,8 @@ const MyServices = () => {
       setVisibleItems(servicesList.length);
       setIsVisible(false);
     } else {
-      setVisibleItems(4);
-      setIsVisible(servicesList.length > 4);
+      setVisibleItems(nextIncrementof);
+      setIsVisible(servicesList.length > nextIncrementof);
     }
   }, [windowWidth]);
 
