@@ -39,6 +39,9 @@
   overflow: hidden;
   transition: all 0.5s ease-in-out;
 }
+.serviceCard:nth-child(even) {
+  background: linear-gradient(-100deg, #3498db4d, #00000033);
+}
 
 .serviceCard:hover {
   transform: scale(1.02) translateY(-5px);
