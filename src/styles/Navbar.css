@@ -91,7 +91,7 @@
   padding: 0.5rem 0.9rem;
   border-bottom: 3px solid #3498db;
   background: rgba(52, 152, 219, 0.1);
-  border-radius: 0.5rem;
+  border-radius: 0.75rem;
   transition: background 1s ease-in-out;
 }
 
@@ -168,7 +168,6 @@
     pointer-events: auto;
   }
 }
-
 
 @media screen and (max-width: 480px) {
   .navContainer {

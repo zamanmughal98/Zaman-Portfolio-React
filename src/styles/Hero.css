@@ -51,7 +51,7 @@
   white-space: nowrap;
   font-size: 1.25rem;
   padding: 0.75rem 1.5rem;
-  border-radius: 5px;
+  border-radius: 0.75rem;
   transition: all 0.5s ease-in-out;
 }
 
