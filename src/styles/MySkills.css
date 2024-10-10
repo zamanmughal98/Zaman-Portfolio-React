@@ -68,7 +68,7 @@
   border-radius: 0.6rem;
   padding: 1rem;
   box-sizing: border-box;
-  background: rgba(52, 152, 219, 0.15);
+  background: #3498db26;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -79,7 +79,7 @@
 .listCard:hover {
   filter: brightness(80%);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
-  transform: translateY(-5px);
+  transform: scale(1.08) translateY(-5px);
 }
 
 .listIcon {
