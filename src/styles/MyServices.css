@@ -32,11 +32,7 @@
   border-radius: 0.8rem;
   padding: 1.5rem;
   box-sizing: border-box;
-  background: linear-gradient(
-    145deg,
-    rgba(52, 152, 219, 0.3),
-    rgba(0, 0, 0, 0.2)
-  );
+  background: linear-gradient(145deg, #3498db4d, #00000033);
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
@@ -46,6 +42,7 @@
 
 .serviceCard:hover {
   transform: scale(1.02) translateY(-5px);
+  filter: brightness(80%);
   box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5);
 }
 
