@@ -110,6 +110,7 @@ const Hero = ({ sliderData }) => {
                     className="heroImage"
                     src={imageList[`slide${index + 1}`]}
                     alt="heroImage"
+                    loading="lazy"
                   />
                 </div>
               </section>
