@@ -22,6 +22,23 @@ const Hero = ({ sliderData }) => {
 
   const navigate = useNavigate();
 
+  useEffect(() => {
+    const importImages = async () => {
+      try {
+        const images = [
+          (await import('../assets/images/Hero Image 1.png')).default,
+          (await import('../assets/images/Hero Image 2.png')).default,
+          (await import('../assets/images/Hero Image 3.png')).default,
+        ];
+        setImageList(images);
+      } catch (error) {
+        console.error('Error loading images', error);
+      }
+    };
+
+    importImages();
+  }, []);
+
   const sliderButtonsList = [
     {
       cssStyles: 'heroHrieButton',
