@@ -1,10 +1,6 @@
 import '../styles/Hero.css';
 
-import image1 from '../assets/images/Hero Image 1.png';
-import image2 from '../assets/images/Hero Image 2.png';
-import image3 from '../assets/images/Hero Image 3.png';
-
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useKeenSlider } from 'keen-slider/react';
 import 'keen-slider/keen-slider.min.css';
 import { useNavigate } from 'react-router-dom';
