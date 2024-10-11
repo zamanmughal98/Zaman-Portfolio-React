@@ -7,11 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import { capitalizeSentence } from '../config/utils';
 
 const Hero = ({ sliderData }) => {
-  const imageList = {
-    slide1: image1,
-    slide2: image2,
-    slide3: image3,
-  };
+  const [imageList, setImageList] = useState([]);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
   const sliderTime = 3500;
@@ -121,7 +117,7 @@ const Hero = ({ sliderData }) => {
                 <div className="heroSliderImageSide">
                   <img
                     className="heroImage"
-                    src={imageList[`slide${index + 1}`]}
+                    src={imageList.at(index)}
                     alt="heroImage"
                     loading="lazy"
                   />
