@@ -12,6 +12,7 @@ import MainLayout from './layouts/MainLayout';
 import ErrorPage from './pages/ErrorPage';
 import HomePage from './pages/HomePage';
 import SkillsPage from './pages/SkillsPage';
+import ContactPage from './pages/ContactPage';
 
 const App = () => {
   const errorDetails = {
@@ -38,10 +39,7 @@ const App = () => {
           element={<h2>resume Page Coming Soon ......</h2>}
         />
 
-        <Route
-          path="/contact"
-          element={<h2>contact Page Coming Soon ......</h2>}
-        />
+        <Route path="/contact" element={<ContactPage />} />
 
         <Route path="*" element={<ErrorPage errorDetails={errorDetails} />} />
       </Route>,
