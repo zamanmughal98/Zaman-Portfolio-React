@@ -1,4 +1,4 @@
-import '../../styles//MySkills.css';
+import '../../styles/MySkills.css';
 
 import { PiTargetDuotone } from 'react-icons/pi';
 

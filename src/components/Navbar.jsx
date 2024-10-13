@@ -13,7 +13,7 @@ import { capitalizeSentence, debounce } from '../config/utils';
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
   const [icons, setIcons] = useState('up');
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth); // State for window width
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   const NavsLinkList = [
     { title: 'Home', linkto: '/' },
