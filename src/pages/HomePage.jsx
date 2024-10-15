@@ -1,4 +1,4 @@
-import '../styles/HomePage.css';
+import '../styles/pages/HomePage.css';
 
 import Hero from '../components/Hero';
 import About from '../components/About';

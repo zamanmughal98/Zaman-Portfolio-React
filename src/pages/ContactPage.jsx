@@ -1,4 +1,4 @@
-import '../styles/ContactPage.css';
+import '../styles/pages/ContactPage.css';
 
 import ContactMe from '../components/ContactMe';
 

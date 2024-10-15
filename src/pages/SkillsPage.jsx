@@ -1,4 +1,4 @@
-import '../styles/SkillsPage.css';
+import '../styles/pages/SkillsPage.css';
 
 import HeadingwithShadow from '../components/HeadingwithShadow';
 
