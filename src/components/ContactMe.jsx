@@ -1,5 +1,7 @@
 import '../styles/ContactMe.css';
 
+import contactmeImage from '../assets/images/Hero Image 3.png';
+
 import { useState } from 'react';
 
 import emailjs from 'emailjs-com';
@@ -41,7 +43,7 @@ const ContactMe = () => {
   const validateMessage = (message) => {
     if (message.trim() === '') {
       return 'Message is required';
-    } else if (message.length < 10) {
+    } else if (message.trim().length < 10) {
       return 'Message must be at least 10 characters long';
     }
     return '';
@@ -99,62 +101,89 @@ const ContactMe = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="contact-form" noValidate>
-      <div className="form-group">
-        <label htmlFor="senderName">Name</label>
-        <input
-          type="text"
-          id="name"
-          name="senderName"
-          value={formData.senderName}
-          onChange={handleChange}
-          className={`form-control ${errors.senderName ? 'error-border' : ''}`}
+    <section className="contactMeWrapper">
+      <div className="contactmeImageContainer">
+        <img
+          className="contactmeImage"
+          src={contactmeImage}
+          alt="Contact-Image"
         />
-        {errors.senderName && (
-          <span className="error-text">{errors.senderName}</span>
-        )}
       </div>
 
-      <div className="form-group">
-        <label htmlFor="senderEmail">Email</label>
-        <input
-          type="email"
-          id="email"
-          name="senderEmail"
-          value={formData.senderEmail}
-          onChange={handleChange}
-          className={`form-control ${errors.senderEmail ? 'error-border' : ''}`}
-        />
-        {errors.senderEmail && (
-          <span className="error-text">{errors.senderEmail}</span>
-        )}
-      </div>
+      <form onSubmit={handleSubmit} className="contactmeForm" noValidate>
+        <div className="contactHeadline">Let&apos;s work together. 🚀</div>
 
-      <div className="form-group">
-        <label htmlFor="senderMessage">Message</label>
-        <textarea
-          id="message"
-          name="senderMessage"
-          value={formData.senderMessage}
-          onChange={handleChange}
-          className={`form-control ${
-            errors.senderMessage ? 'error-border' : ''
-          }`}
-          rows="5"
-          maxLength={messageCharLimit}
-        />
-        <div className="char-counter">
-          {formData.senderMessage.length}/{messageCharLimit}
+        <div className="errorFieldGroup">
+          <label
+            htmlFor="senderEmail"
+            style={{ color: errors.senderName ? 'red' : '#fff' }}>
+            Full Name *
+          </label>
+
+          <input
+            className={`inptField ${errors.senderName ? 'errorBorder' : ''}`}
+            placeholder="Name"
+            type="text"
+            name="senderName"
+            value={formData.senderName}
+            onChange={handleChange}
+          />
+          {errors.senderName && (
+            <span className="errorText">{errors.senderName}</span>
+          )}
         </div>
-        {errors.senderMessage && (
-          <span className="error-text">{errors.senderMessage}</span>
-        )}
-      </div>
 
-      <button type="submit" className="btn btn-primary" disabled={isSubmitting}>
-        {isSubmitting ? 'Sending...' : 'Send Message'}
-      </button>
-    </form>
+        <div className="errorFieldGroup">
+          <label
+            htmlFor="senderEmail"
+            style={{ color: errors.senderEmail ? 'red' : '#fff' }}>
+            Email *
+          </label>
+
+          <input
+            className={`inptField ${errors.senderEmail ? 'errorBorder' : ''}`}
+            placeholder="Email"
+            type="email"
+            name="senderEmail"
+            value={formData.senderEmail}
+            onChange={handleChange}
+          />
+          {errors.senderEmail && (
+            <span className="errorText">{errors.senderEmail}</span>
+          )}
+        </div>
+
+        <div className="errorFieldGroup">
+          <label htmlFor="senderMessage">
+            Tell us more about your project *
+          </label>
+          <textarea
+            className={`textArea inptField ${
+              errors.senderMessage ? 'errorBorder' : ''
+            }`}
+            placeholder="Type your message here ..."
+            name="senderMessage"
+            value={formData.senderMessage}
+            onChange={handleChange}
+            maxLength={messageCharLimit}
+            rows="8"
+          />
+          {errors.senderMessage && (
+            <span className="errorText">{errors.senderMessage}</span>
+          )}
+          <div className="charCounter">
+            {formData.senderMessage.length}/{messageCharLimit}
+          </div>
+        </div>
+
+        <button
+          type="submit"
+          className="messageSubmitButton"
+          disabled={isSubmitting}>
+          {isSubmitting ? 'Sending...' : 'Send Message'}
+        </button>
+      </form>
+    </section>
   );
 };
 
