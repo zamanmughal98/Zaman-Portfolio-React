@@ -1,100 +1,219 @@
-.contact-form {
+.contactMeWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
   width: 100%;
-  max-width: 600px;
-  margin: 0 auto;
-  background: #3498db10;
+  background: #3498db1e;
   border-radius: 20px;
   padding: 2.5rem 1.25rem;
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-  transition: all 0.5s ease-in-out;
+  box-sizing: border-box;
 }
 
-.form-group {
-  margin-bottom: 1.5rem;
+.contactmeImageContainer {
+  width: 50%;
 }
 
-.form-control {
+.contactmeImage {
+  width: 100%;
+  height: auto;
+  max-width: 18rem;
+  object-fit: contain;
+}
+
+.contactmeForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 50%;
+  box-sizing: border-box;
+  font-size: 1rem;
+  gap: 1rem;
+}
+
+.contactHeadline {
+  font-size: 1.2rem;
+  font-weight: bold;
+  align-self: center;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 1);
+}
+
+.errorFieldGroup {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex-direction: column;
+  width: 100%;
+}
+
+.textArea {
+  resize: vertical;
+}
+
+.inptField {
+  font-size: 1rem;
+  color: #fff;
+  background: #3498db1e;
   width: 100%;
   padding: 0.75rem;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 1rem;
-  background-color: rgba(255, 255, 255, 0.8);
-  transition: border-color 0.3s ease;
+  border: 0.15rem solid transparent;
+  outline: none;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  transition: border-color 0.5s ease-in;
 }
 
-.form-control:focus {
+.inptField::placeholder {
+  color: #fff;
+  opacity: 0.5;
+}
+
+.inptField:focus {
   border-color: #3498db;
   outline: none;
 }
 
-.form-control.error-border {
+.inptField.errorBorder {
   border-color: red;
 }
 
-.error-text {
+.errorText {
   color: red;
   font-size: 0.875rem;
   margin-top: 0.25rem;
 }
 
-.char-counter {
-  text-align: right;
+.charCounter {
   font-size: 0.85rem;
   color: #888;
-  margin-top: 0.25rem;
+  align-self: flex-end;
 }
 
-.btn {
-  padding: 0.75rem 1.5rem;
-  background-color: #3498db;
+.heroHrieButton {
+  background: #3498db;
   color: white;
   border: none;
-  border-radius: 4px;
-  cursor: pointer;
+}
+
+.messageSubmitButton {
+  font-size: 1rem;
+  color: white;
+  background: #3498db;
+  border-radius: 0.75rem;
+  outline: none;
+  border: none;
+  padding: 0.75rem 1.5rem;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  transition: all 1s ease-in-out;
+  box-sizing: border-box;
 }
 
-.btn:hover {
-  background-color: #2980b9;
-  transform: scale(1.05);
+.messageSubmitButton:hover {
+  color: #3498db;
+  background: white;
+  font-weight: bold;
+  transform: scale(1.08) translateY(-5px);
 }
 
-.btn:disabled {
-  background-color: #ccc;
+.messageSubmitButton:active {
+  background: #3498db;
+  color: white;
+  transform: scale(0.9) translateY(-5px);
+}
+
+.messageSubmitButton:disabled {
+  background: #3498db00;
+  color: white;
   cursor: not-allowed;
+  pointer-events: auto;
+  transform: none;
+  font-weight: normal;
 }
 
-.btn:active {
-  transform: scale(0.95);
-}
-
-/* Media Queries */
 @media screen and (max-width: 768px) {
-  .contact-form {
-    padding: 1.5rem;
+  .contactMeWrapper {
+    flex-direction: column;
+    padding: 1.25rem 0.625rem;
   }
 
-  .btn {
+  .contactmeImageContainer {
     width: 100%;
-    font-size: 1rem;
+  }
+
+  .contactmeImage {
+    max-width: 16rem;
+  }
+
+  .contactmeForm {
+    width: 90%;
+    gap: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .contactHeadline {
+    font-size: 1.1rem;
+  }
+
+  .inptField {
+    font-size: 0.9rem;
+  }
+
+  .messageSubmitButton {
+    width: 50%;
+    font-size: 0.9rem;
+    padding: 0.6rem 1.25rem;
+    align-self: center;
   }
 }
 
 @media screen and (max-width: 480px) {
-  .contact-form {
-    padding: 1rem;
+  .contactmeImage {
+    max-width: 12rem;
   }
 
-  .form-control {
-    font-size: 0.9rem;
+  .contactmeForm {
+    font-size: 0.85rem;
   }
 
-  .btn {
+  .contactHeadline {
+    font-size: 1.05rem;
+  }
+
+  .inptField {
+    font-size: 0.85rem;
+  }
+
+  .messageSubmitButton {
     font-size: 0.85rem;
     padding: 0.5rem 1rem;
+  }
+
+  .messageSubmitButton:hover {
+    transform: scale(1.02) translateY(-3px);
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .contactmeForm {
+    font-size: 0.8rem;
+  }
+
+  .contactHeadline {
+    font-size: 1rem;
+  }
+
+  .inptField {
+    font-size: 0.8rem;
+  }
+
+  .contactmeImage {
+    max-width: 11rem;
+  }
+
+  .messageSubmitButton {
+    font-size: 0.7rem;
+    padding: 0.4rem 0.8rem;
   }
 }
