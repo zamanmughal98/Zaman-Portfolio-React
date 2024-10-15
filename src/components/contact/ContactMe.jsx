@@ -1,12 +1,12 @@
-import '../styles/ContactMe.css';
+import '../../styles/ContactMe.css';
 
-import contactmeImage from '../assets/images/Hero Image 3.png';
+import contactmeImage from '../../assets/images/Hero Image 3.png';
 
 import { useState } from 'react';
 
 import emailjs from 'emailjs-com';
 
-import { EmailJsCredential } from '../config/env.mapping';
+import { EmailJsCredential } from '../../config/env.mapping';
 
 // Avoid updating variables starting with 'sender' within useState hooks, field names, or the validation object mapping.
 const ContactMe = () => {
