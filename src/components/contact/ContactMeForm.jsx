@@ -1,9 +1,5 @@
 import { useState } from 'react';
 
-import emailjs from 'emailjs-com';
-
-import { EmailJsCredential } from '../../config/env.mapping';
-
 import { GoRocket } from 'react-icons/go';
 import { CiMemoPad } from 'react-icons/ci';
 import { CiUser } from 'react-icons/ci';
@@ -11,10 +7,31 @@ import { AiOutlineMail } from 'react-icons/ai';
 import { FiSend } from 'react-icons/fi';
 import { RiLoader2Line } from 'react-icons/ri';
 
-// Avoid updating variables starting with 'sender' within useState hooks, field names, or the validation object mapping.
+import { toast } from 'react-toastify';
+
+import emailjs from 'emailjs-com';
+import { EmailJsCredential } from '../../config/env.mapping';
+
 const ContactMeForm = () => {
   const messageCharLimit = 500;
   const { serviceId, templateId, userId } = EmailJsCredential;
+
+  const successToaster = {
+    render: 'Message sent successfully!',
+    type: 'success',
+    isLoading: false,
+    autoClose: 5000,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    closeButton: true,
+  };
+
+  const errorToaster = {
+    ...successToaster,
+    render: 'Message failed to send. Try again.',
+    type: 'error',
+  };
 
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -84,9 +101,8 @@ const ContactMeForm = () => {
       validateField(key, formData[key]);
       return formData[key].trim() !== '' && !errors[key];
     });
-
     if (!formIsValid) return;
-
+    const toastId = toast.loading('Sending message...');
     setIsSubmitting(true);
 
     emailjs
@@ -94,18 +110,32 @@ const ContactMeForm = () => {
       .then(() => {
         setFormData({ senderName: '', senderEmail: '', senderMessage: '' });
         setErrors({});
+        toast.update(toastId, successToaster);
       })
       .catch((error) => {
         console.error('Email send failed:', error);
+        toast.update(toastId, errorToaster);
       })
       .finally(() => {
         setIsSubmitting(false);
       });
+
+    // For the testing purpose
+    // const toastId = toast.loading('Sending message...');
+    // setIsSubmitting(true);
+
+    // setTimeout(() => {
+    //   toast.update(toastId, successToaster);
+    //   // toast.update(toastId, errorToaster);
+
+    //   setIsSubmitting(false);
+    // }, 1000);
   };
+
   return (
     <form onSubmit={handleSubmit} className="contactmeForm" noValidate>
       <div className="contactHeadline iconsWrapper">
-        Lets Work together On Your Next Big Project! <GoRocket />
+        Lets Work Together On Your Next Big Project! <GoRocket />
       </div>
 
       <div className="iconsWrapper alignSelfCenter">
@@ -115,11 +145,11 @@ const ContactMeForm = () => {
       <div className="errorFieldGroup">
         <label
           className="iconsWrapper"
-          htmlFor="senderEmail"
+          htmlFor="senderName"
           style={{ color: errors.senderName ? 'red' : '#fff' }}>
-          <CiUser /> Full Name *
+          <CiUser />
+          Full Name *
         </label>
-
         <input
           className={`inptField ${errors.senderName ? 'errorBorder' : ''}`}
           placeholder="Your Name"
@@ -180,7 +210,7 @@ const ContactMeForm = () => {
 
       <button
         type="submit"
-        className="messageSubmitButton "
+        className="messageSubmitButton"
         disabled={isSubmitting}>
         {isSubmitting ? (
           <span className="iconsWrapper">
@@ -193,9 +223,9 @@ const ContactMeForm = () => {
         )}
       </button>
 
-      <div className=" alignSelfCenter">
-        Want to connect another way? You can find my email and social links in
-        the footer below.
+      <div className="alignSelfCenter">
+        Want to connect another way? <br />
+        You can find out email and social links in the footer below.
       </div>
     </form>
   );
