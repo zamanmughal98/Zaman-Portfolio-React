@@ -4,6 +4,13 @@ import emailjs from 'emailjs-com';
 
 import { EmailJsCredential } from '../../config/env.mapping';
 
+import { GoRocket } from 'react-icons/go';
+import { CiMemoPad } from 'react-icons/ci';
+import { CiUser } from 'react-icons/ci';
+import { AiOutlineMail } from 'react-icons/ai';
+import { FiSend } from 'react-icons/fi';
+import { RiLoader2Line } from 'react-icons/ri';
+
 // Avoid updating variables starting with 'sender' within useState hooks, field names, or the validation object mapping.
 const ContactMeForm = () => {
   const messageCharLimit = 500;
@@ -97,18 +104,25 @@ const ContactMeForm = () => {
   };
   return (
     <form onSubmit={handleSubmit} className="contactmeForm" noValidate>
-      <div className="contactHeadline">Let&apos;s work together. 🚀</div>
+      <div className="contactHeadline iconsWrapper">
+        Lets Work together On Your Next Big Project! <GoRocket />
+      </div>
+
+      <div className="iconsWrapper alignSelfCenter">
+        Fill out this form, and lets discuss your vision! <CiMemoPad />
+      </div>
 
       <div className="errorFieldGroup">
         <label
+          className="iconsWrapper"
           htmlFor="senderEmail"
           style={{ color: errors.senderName ? 'red' : '#fff' }}>
-          Full Name *
+          <CiUser /> Full Name *
         </label>
 
         <input
           className={`inptField ${errors.senderName ? 'errorBorder' : ''}`}
-          placeholder="Name"
+          placeholder="Your Name"
           type="text"
           name="senderName"
           value={formData.senderName}
@@ -121,14 +135,16 @@ const ContactMeForm = () => {
 
       <div className="errorFieldGroup">
         <label
+          className="iconsWrapper"
           htmlFor="senderEmail"
           style={{ color: errors.senderEmail ? 'red' : '#fff' }}>
-          Email *
+          <AiOutlineMail />
+          E-mail *
         </label>
 
         <input
           className={`inptField ${errors.senderEmail ? 'errorBorder' : ''}`}
-          placeholder="Email"
+          placeholder="Your Email Address"
           type="email"
           name="senderEmail"
           value={formData.senderEmail}
@@ -140,7 +156,9 @@ const ContactMeForm = () => {
       </div>
 
       <div className="errorFieldGroup">
-        <label htmlFor="senderMessage">Tell us more about your project *</label>
+        <label className="iconsWrapper" htmlFor="senderMessage">
+          Tell us more about your project *
+        </label>
         <textarea
           className={`textArea inptField ${
             errors.senderMessage ? 'errorBorder' : ''
@@ -162,10 +180,23 @@ const ContactMeForm = () => {
 
       <button
         type="submit"
-        className="messageSubmitButton"
+        className="messageSubmitButton "
         disabled={isSubmitting}>
-        {isSubmitting ? 'Sending...' : 'Send Message'}
+        {isSubmitting ? (
+          <span className="iconsWrapper">
+            Sending <RiLoader2Line />
+          </span>
+        ) : (
+          <span className="iconsWrapper">
+            Send Message <FiSend />
+          </span>
+        )}
       </button>
+
+      <div className=" alignSelfCenter">
+        Want to connect another way? You can find my email and social links in
+        the footer below.
+      </div>
     </form>
   );
 };
