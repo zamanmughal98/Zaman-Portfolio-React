@@ -1,7 +1,5 @@
 import { useState } from 'react';
 
-import { GoRocket } from 'react-icons/go';
-import { CiMemoPad } from 'react-icons/ci';
 import { CiUser } from 'react-icons/ci';
 import { AiOutlineMail } from 'react-icons/ai';
 import { FiSend } from 'react-icons/fi';
@@ -134,12 +132,12 @@ const ContactMeForm = () => {
 
   return (
     <form onSubmit={handleSubmit} className="contactmeForm" noValidate>
-      <div className="contactHeadline iconsWrapper">
-        Lets Work Together On Your Next Big Project! <GoRocket />
+      <div className="contactHeadline">
+        Lets Work Together On Your Next Big Project!
       </div>
 
-      <div className="iconsWrapper alignSelfCenter">
-        Fill out this form, and lets discuss your vision! <CiMemoPad />
+      <div className="contactSubHeading">
+        Fill out this form, and lets discuss your vision!
       </div>
 
       <div className="errorFieldGroup">
@@ -223,7 +221,7 @@ const ContactMeForm = () => {
         )}
       </button>
 
-      <div className="alignSelfCenter">
+      <div className="contactSubHeading">
         Want to connect another way? <br />
         You can find out email and social links in the footer below.
       </div>
