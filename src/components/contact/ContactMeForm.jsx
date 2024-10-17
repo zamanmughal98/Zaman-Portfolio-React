@@ -1,21 +1,25 @@
 import { useState } from 'react';
 
-import { CiUser } from 'react-icons/ci';
-import { AiOutlineMail } from 'react-icons/ai';
-import { FiSend } from 'react-icons/fi';
-import { RiLoader2Line } from 'react-icons/ri';
-
 import { toast } from 'react-toastify';
+import { FiSend } from 'react-icons/fi';
 
 import emailjs from 'emailjs-com';
 import { EmailJsCredential } from '../../config/env.mapping';
 
-import { successToaster, errorToaster, validateField } from './contactData';
+import ContactInputField from './ContactInputField';
+import ContactTextArea from './ContactTextArea';
+import ContactSubmitButtom from './ContactSubmitButtom';
+
+import {
+  contactFormTextContent,
+  successToaster,
+  errorToaster,
+  validateField,
+  inputFieldsValue,
+  textAreaValues,
+} from './contactData';
 
 const ContactMeForm = () => {
-  const messageCharLimit = 500;
-  const { serviceId, templateId, userId } = EmailJsCredential;
-
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
@@ -40,15 +44,27 @@ const ContactMeForm = () => {
 
     const formIsValid = Object.keys(formData).every((key) => {
       validateField(key, formData[key], setErrors);
+
       return formData[key].trim() !== '' && !errors[key];
     });
 
     if (!formIsValid) return;
-    const toastId = toast.loading('Sending message...');
+
+    const toastId = toast.loading(
+      <span className="iconsWrapper">
+        {contactFormTextContent.toasterLoadingMessage} <FiSend />
+      </span>,
+    );
+
     setIsSubmitting(true);
 
     emailjs
-      .send(serviceId, templateId, { ...formData }, userId)
+      .send(
+        EmailJsCredential.serviceId,
+        EmailJsCredential.templateId,
+        { ...formData },
+        EmailJsCredential.userId,
+      )
       .then(() => {
         setFormData({ senderName: '', senderEmail: '', senderMessage: '' });
         setErrors({});
@@ -65,98 +81,43 @@ const ContactMeForm = () => {
 
   return (
     <form onSubmit={handleSubmit} className="contactmeForm" noValidate>
-      <div className="contactHeadline">
-        Lets Work Together On Your Next Big Project!
-      </div>
+      <div className="contactHeadline">{contactFormTextContent.headline}</div>
 
       <div className="contactSubHeading">
-        Fill out this form, and lets discuss your vision!
+        {contactFormTextContent.subHeadline1}
       </div>
 
-      <div className="errorFieldGroup">
-        <label
-          className="iconsWrapper"
-          htmlFor="senderName"
-          style={{ color: errors.senderName ? 'red' : '#fff' }}>
-          <CiUser />
-          Full Name *
-        </label>
-        <input
-          className={`inptField ${errors.senderName ? 'errorBorder' : ''}`}
-          placeholder="Your Name"
-          type="text"
-          name="senderName"
-          value={formData.senderName}
-          onChange={handleChange}
-        />
-        {errors.senderName && (
-          <span className="errorText">{errors.senderName}</span>
-        )}
-      </div>
+      {inputFieldsValue.map(
+        ({ fieldTitle, inputType, inputName, placeholder }) => (
+          <ContactInputField
+            key={inputName}
+            fieldTitle={fieldTitle}
+            inputType={inputType}
+            inputName={inputName}
+            inputValue={formData[inputName]}
+            error={errors[inputName]}
+            placeholder={placeholder}
+            onChange={handleChange}
+          />
+        ),
+      )}
 
-      <div className="errorFieldGroup">
-        <label
-          className="iconsWrapper"
-          htmlFor="senderEmail"
-          style={{ color: errors.senderEmail ? 'red' : '#fff' }}>
-          <AiOutlineMail />
-          E-mail *
-        </label>
+      <ContactTextArea
+        fieldTitle={textAreaValues.fieldTitle}
+        inputName={textAreaValues.inputName}
+        inputValue={formData[textAreaValues.inputName]}
+        error={errors[textAreaValues.inputName]}
+        placeholder={textAreaValues.placeholder}
+        textAreaRows={textAreaValues.textAreaRows}
+        maxLength={textAreaValues.maxLength}
+        onChange={handleChange}
+      />
 
-        <input
-          className={`inptField ${errors.senderEmail ? 'errorBorder' : ''}`}
-          placeholder="Your Email Address"
-          type="email"
-          name="senderEmail"
-          value={formData.senderEmail}
-          onChange={handleChange}
-        />
-        {errors.senderEmail && (
-          <span className="errorText">{errors.senderEmail}</span>
-        )}
-      </div>
-
-      <div className="errorFieldGroup">
-        <label className="iconsWrapper" htmlFor="senderMessage">
-          Tell us more about your project *
-        </label>
-        <textarea
-          className={`textArea inptField ${
-            errors.senderMessage ? 'errorBorder' : ''
-          }`}
-          placeholder="Type your message here ..."
-          name="senderMessage"
-          value={formData.senderMessage}
-          onChange={handleChange}
-          maxLength={messageCharLimit}
-          rows="8"
-        />
-        {errors.senderMessage && (
-          <span className="errorText">{errors.senderMessage}</span>
-        )}
-        <div className="charCounter">
-          {formData.senderMessage.length}/{messageCharLimit}
-        </div>
-      </div>
-
-      <button
-        type="submit"
-        className="messageSubmitButton"
-        disabled={isSubmitting}>
-        {isSubmitting ? (
-          <span className="iconsWrapper">
-            Sending <RiLoader2Line />
-          </span>
-        ) : (
-          <span className="iconsWrapper">
-            Send Message <FiSend />
-          </span>
-        )}
-      </button>
+      <ContactSubmitButtom isDisabled={isSubmitting} />
 
       <div className="contactSubHeading">
-        Want to connect another way? <br />
-        You can find out email and social links in the footer below.
+        {contactFormTextContent.subHeadline2}
+        <div>{contactFormTextContent.subHeadline3}</div>
       </div>
     </form>
   );
