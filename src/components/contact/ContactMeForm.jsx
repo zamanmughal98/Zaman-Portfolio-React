@@ -10,26 +10,11 @@ import { toast } from 'react-toastify';
 import emailjs from 'emailjs-com';
 import { EmailJsCredential } from '../../config/env.mapping';
 
+import { successToaster, errorToaster, validationRules } from './contactData';
+
 const ContactMeForm = () => {
   const messageCharLimit = 500;
   const { serviceId, templateId, userId } = EmailJsCredential;
-
-  const successToaster = {
-    render: 'Message sent successfully!',
-    type: 'success',
-    isLoading: false,
-    autoClose: 5000,
-    closeOnClick: true,
-    pauseOnHover: true,
-    draggable: true,
-    closeButton: true,
-  };
-
-  const errorToaster = {
-    ...successToaster,
-    render: 'Message failed to send. Try again.',
-    type: 'error',
-  };
 
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -38,40 +23,6 @@ const ContactMeForm = () => {
     senderEmail: '',
     senderMessage: '',
   });
-
-  const validateName = (name) => {
-    if (name.trim() === '') {
-      return 'Name is required';
-    } else if (name.trim().length < 5) {
-      return 'Name must be at least 5 characters long';
-    }
-    return '';
-  };
-
-  const validateEmail = (email) => {
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (email.trim() === '') {
-      return 'Email is required';
-    } else if (!emailPattern.test(email)) {
-      return 'Invalid email address';
-    }
-    return '';
-  };
-
-  const validateMessage = (message) => {
-    if (message.trim() === '') {
-      return 'Message is required';
-    } else if (message.trim().length < 10) {
-      return 'Message must be at least 10 characters long';
-    }
-    return '';
-  };
-
-  const validationRules = {
-    senderName: validateName,
-    senderEmail: validateEmail,
-    senderMessage: validateMessage,
-  };
 
   const validateField = (field, value) => {
     const validate = validationRules[field];
@@ -99,6 +50,7 @@ const ContactMeForm = () => {
       validateField(key, formData[key]);
       return formData[key].trim() !== '' && !errors[key];
     });
+
     if (!formIsValid) return;
     const toastId = toast.loading('Sending message...');
     setIsSubmitting(true);
@@ -117,17 +69,6 @@ const ContactMeForm = () => {
       .finally(() => {
         setIsSubmitting(false);
       });
-
-    // For the testing purpose
-    // const toastId = toast.loading('Sending message...');
-    // setIsSubmitting(true);
-
-    // setTimeout(() => {
-    //   toast.update(toastId, successToaster);
-    //   // toast.update(toastId, errorToaster);
-
-    //   setIsSubmitting(false);
-    // }, 1000);
   };
 
   return (
