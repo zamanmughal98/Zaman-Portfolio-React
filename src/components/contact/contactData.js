@@ -1,3 +1,35 @@
+export const contactFormTextContent = {
+  headline: "Let's Work Together On Your Next Big Project!",
+  subHeadline1: "Fill out this form, and let's discuss your vision!",
+  subHeadline2: 'Want to connect another way? ',
+  subHeadline3: ' You can find out email and social links in the footer below.',
+  toasterLoadingMessage: 'Sending your message... ',
+};
+
+export const inputFieldsValue = [
+  {
+    fieldTitle: 'Full Name',
+    inputType: 'text',
+    inputName: 'senderName',
+    placeholder: 'Your Name',
+  },
+
+  {
+    fieldTitle: 'E-mail',
+    inputType: 'email',
+    inputName: 'senderEmail',
+    placeholder: 'Your Email Address',
+  },
+];
+
+export const textAreaValues = {
+  fieldTitle: 'Tell us more about your project',
+  inputName: 'senderMessage',
+  placeholder: 'Type your message here ...',
+  textAreaRows: '8',
+  maxLength: '500',
+};
+
 export const successToaster = {
   render: 'Message sent successfully!',
   type: 'success',
