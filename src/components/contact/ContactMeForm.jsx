@@ -10,7 +10,7 @@ import { toast } from 'react-toastify';
 import emailjs from 'emailjs-com';
 import { EmailJsCredential } from '../../config/env.mapping';
 
-import { successToaster, errorToaster, validationRules } from './contactData';
+import { successToaster, errorToaster, validateField } from './contactData';
 
 const ContactMeForm = () => {
   const messageCharLimit = 500;
@@ -24,14 +24,6 @@ const ContactMeForm = () => {
     senderMessage: '',
   });
 
-  const validateField = (field, value) => {
-    const validate = validationRules[field];
-    if (validate) {
-      const error = validate(value);
-      setErrors((prevErrors) => ({ ...prevErrors, [field]: error }));
-    }
-  };
-
   const handleChange = (e) => {
     const { name: field, value } = e.target;
 
@@ -40,14 +32,14 @@ const ContactMeForm = () => {
       [field]: value,
     }));
 
-    validateField(field, value);
+    validateField(field, value, setErrors);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     const formIsValid = Object.keys(formData).every((key) => {
-      validateField(key, formData[key]);
+      validateField(key, formData[key], setErrors);
       return formData[key].trim() !== '' && !errors[key];
     });
 

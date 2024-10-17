@@ -43,10 +43,18 @@ const validateMessage = (message) => {
   return '';
 };
 
-export const validationRules = {
+const validationRules = {
   senderName: validateName,
   senderEmail: validateEmail,
   senderMessage: validateMessage,
+};
+
+export const validateField = (field, value, updateErrorHandler) => {
+  const validate = validationRules[field];
+  if (validate) {
+    const error = validate(value);
+    updateErrorHandler((prevErrors) => ({ ...prevErrors, [field]: error }));
+  }
 };
 
 // For the testing of email and toasts
