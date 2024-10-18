@@ -1,4 +1,4 @@
-import '../styles/Navbar.css';
+import '../styles/components/Navbar.css';
 
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { IoCloseCircleOutline } from 'react-icons/io5';
