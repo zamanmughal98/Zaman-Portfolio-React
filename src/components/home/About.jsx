@@ -1,7 +1,7 @@
-import '../styles/About.css';
+import '../../styles/components/About.css';
 
-import image1 from '../assets/images/Hero Image 1.png';
-import image2 from '../assets/images/Hero Image 2.png';
+import image1 from '../../assets/images/Hero Image 1.png';
+import image2 from '../../assets/images/Hero Image 2.png';
 
 import {
   RiCakeLine,
@@ -13,7 +13,7 @@ import { BiLogoGmail } from 'react-icons/bi';
 import { IoMdArrowRoundForward } from 'react-icons/io';
 
 import { useNavigate } from 'react-router-dom';
-import { capitalizeSentence } from '../config/utils';
+import { capitalizeSentence } from '../../config/utils';
 import { useState } from 'react';
 
 const About = ({ isHomePage = false, introductorySentences, details }) => {

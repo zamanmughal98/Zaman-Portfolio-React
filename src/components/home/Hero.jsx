@@ -1,10 +1,10 @@
-import '../styles/Hero.css';
+import '../../styles/components/Hero.css';
 
 import { useState, useEffect } from 'react';
 import { useKeenSlider } from 'keen-slider/react';
 import 'keen-slider/keen-slider.min.css';
 import { useNavigate } from 'react-router-dom';
-import { capitalizeSentence } from '../config/utils';
+import { capitalizeSentence } from '../../config/utils';
 
 const Hero = ({ sliderData }) => {
   const [imageList, setImageList] = useState([]);
@@ -18,9 +18,9 @@ const Hero = ({ sliderData }) => {
     const importImages = async () => {
       try {
         const images = [
-          (await import('../assets/images/Hero Image 1.png')).default,
-          (await import('../assets/images/Hero Image 2.png')).default,
-          (await import('../assets/images/Hero Image 3.png')).default,
+          (await import('../../assets/images/Hero Image 1.png')).default,
+          (await import('../../assets/images/Hero Image 2.png')).default,
+          (await import('../../assets/images/Hero Image 3.png')).default,
         ];
         setImageList(images);
       } catch (error) {
