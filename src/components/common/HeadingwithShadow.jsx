@@ -1,6 +1,6 @@
-import '../styles/HeadingwithShadow.css';
+import '../../styles/components/HeadingwithShadow.css';
 
-import { capitalizeSentence } from '../config/utils';
+import { capitalizeSentence } from '../../config/utils';
 
 const HeadingwithShadow = ({ title, shadow }) => (
   <section className="titlesWrapper">

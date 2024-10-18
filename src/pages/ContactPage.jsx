@@ -3,7 +3,7 @@ import '../styles/components/Contact.css';
 
 import contactmeImage from '../assets/images/Hero Image 3.png';
 
-import HeadingwithShadow from '../components/HeadingwithShadow';
+import HeadingwithShadow from '../components/common/HeadingwithShadow';
 import ContactMeForm from '../components/contact/ContactMeForm';
 
 const ContactPage = () => {

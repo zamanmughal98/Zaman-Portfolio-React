@@ -14,7 +14,6 @@ export const firestoreCollections = {
 
 export const PersonalDetailDocumentID = import.meta.env.VITE_CPD_DOCUMENT_ID;
 
-
 export const EmailJsCredential = {
   serviceId: import.meta.env.VITE_EMAILJS_SERVICE_ID,
   templateId: import.meta.env.VITE_EMAILJS_TEMPLATE_ID,

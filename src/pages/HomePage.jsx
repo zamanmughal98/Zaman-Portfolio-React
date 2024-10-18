@@ -2,7 +2,7 @@ import '../styles/pages/HomePage.css';
 
 import Hero from '../components/home/Hero';
 import About from '../components/home/About';
-import HeadingwithShadow from '../components/HeadingwithShadow';
+import HeadingwithShadow from '../components/common/HeadingwithShadow';
 
 const HomePage = () => {
   const slides = [

@@ -1,6 +1,6 @@
 import '../styles/pages/SkillsPage.css';
 
-import HeadingwithShadow from '../components/HeadingwithShadow';
+import HeadingwithShadow from '../components/common/HeadingwithShadow';
 
 import About from '../components/home/About';
 import MySkills from '../components/skill/MySkills';
