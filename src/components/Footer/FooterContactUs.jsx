@@ -1,4 +1,4 @@
-import '../../styles/Footer.css';
+import '../../styles/components/Footer.css';
 
 import { IoCallSharp } from 'react-icons/io5';
 import { MdEmail } from 'react-icons/md';
