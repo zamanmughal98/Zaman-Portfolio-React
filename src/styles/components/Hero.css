@@ -15,9 +15,10 @@
 }
 
 .heroGreeting {
-  font-family: Ananda_Black_Personal;
-  font-size: 1rem;
+  font-size: 1.4rem;
   text-align: start;
+  font-style: italic;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 1);
 }
 
 .heroText {
@@ -56,20 +57,20 @@
 }
 
 .heroHrieButton {
-  background-color: #3498db;
+  background: #3498db;
   color: white;
   border: none;
   outline: none;
 }
 
 .heroHrieButton:hover {
-  background-color: white;
+  background: white;
   color: #3498db;
   transform: scale(1.08) translateY(-5px);
 }
 
 .heroHrieButton:active {
-  background-color: #3498db;
+  background: #3498db;
   color: white;
   transform: scale(0.9) translateY(-5px);
 }
