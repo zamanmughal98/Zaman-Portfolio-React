@@ -1,14 +1,14 @@
-import '../styles/components/Navbar.css';
+import '../../styles/components/Navbar.css';
 
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { IoCloseCircleOutline } from 'react-icons/io5';
 
-import ZLogo from '../assets/svgs/ZLogo';
+import ZLogo from '../../assets/svgs/ZLogo';
 
 import { NavLink } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
-import { capitalizeSentence, debounce } from '../config/utils';
+import { capitalizeSentence, debounce } from '../../config/utils';
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);

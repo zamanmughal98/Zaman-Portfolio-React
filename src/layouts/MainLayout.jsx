@@ -6,7 +6,7 @@ import { useLocation } from 'react-router-dom';
 import { ToastContainer, Zoom } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-import Navbar from '../components/Navbar';
+import Navbar from '../components/navigation/Navbar';
 import Footer from '../components/Footer/Footer';
 
 const MainLayout = () => {
