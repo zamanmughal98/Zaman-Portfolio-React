@@ -1,8 +1,8 @@
-import '../../styles/MyServices.css';
+import '../../styles/components/MyServices.css';
 
 import { RiBookOpenFill } from 'react-icons/ri';
 
-import { servicesList, iconMapping } from './IconsData';
+import { servicesList, iconMapping } from './SkillsIconsData.jsx';
 import { capitalizeSentence } from '../../config/utils.js';
 
 import useSeeMore from '../../hooks/useSeeMore.js';

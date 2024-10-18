@@ -1,8 +1,8 @@
-import '../../styles/MySkills.css';
+import '../../styles/components/MySkills.css';
 
 import { VscTools } from 'react-icons/vsc';
 
-import { technologiesList } from './IconsData';
+import { technologiesList } from './SkillsIconsData.jsx';
 
 import useSeeMore from '../../hooks/useSeeMore.js';
 

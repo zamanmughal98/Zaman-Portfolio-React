@@ -1,4 +1,4 @@
-import { iconMapping } from './IconsData';
+import { iconMapping } from './SkillsIconsData';
 
 const ItemListing = ({ List }) => {
   return (

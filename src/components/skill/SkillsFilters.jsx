@@ -1,4 +1,4 @@
-import { filterOptions } from './IconsData';
+import { filterOptions } from './SkillsIconsData';
 
 import { capitalizeSentence } from '../../config/utils';
 

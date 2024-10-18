@@ -1,8 +1,8 @@
-import '../../styles/MySkills.css';
+import '../../styles/components/MySkills.css';
 
 import { PiTargetDuotone } from 'react-icons/pi';
 
-import { skillsList, filterOptions } from './IconsData';
+import { skillsList, filterOptions } from './SkillsIconsData.jsx';
 
 import { useState, useMemo } from 'react';
 

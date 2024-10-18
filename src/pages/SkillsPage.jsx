@@ -2,10 +2,10 @@ import '../styles/pages/SkillsPage.css';
 
 import HeadingwithShadow from '../components/HeadingwithShadow';
 
-import About from '../components/About';
-import MySkills from '../components/skillSet/MySkills';
-import MyTools from '../components/skillSet/MyTools';
-import MyServices from '../components/skillSet/MyServices';
+import About from '../components/home/About';
+import MySkills from '../components/skill/MySkills';
+import MyServices from '../components/skill/MyServices';
+import MyTools from '../components/skill/MyTools';
 
 const HomePage = () => {
   const introductorySentences =
