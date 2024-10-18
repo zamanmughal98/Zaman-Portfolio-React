@@ -9,10 +9,10 @@ import {
 
 import MainLayout from './layouts/MainLayout';
 
-import ErrorPage from './pages/ErrorPage';
 import HomePage from './pages/HomePage';
 import SkillsPage from './pages/SkillsPage';
 import ContactPage from './pages/ContactPage';
+import ErrorPage from './pages/ErrorPage';
 
 const App = () => {
   const MyRouter = createBrowserRouter(
