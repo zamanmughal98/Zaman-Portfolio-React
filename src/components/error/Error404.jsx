@@ -1,9 +1,9 @@
-import '../styles/components/Error404.css';
+import '../../styles/components/Error404.css';
 
-import errorImage from '../assets/images/404 error.png';
+import errorImage from '../../assets/images/404 error.png';
 
 import { Link } from 'react-router-dom';
-import { capitalizeSentence } from '../config/utils';
+import { capitalizeSentence } from '../../config/utils';
 
 const ErrorPage = ({ errorDetails }) => {
   const { errorHeading, errorMessage, gotoRoute, linkto } = errorDetails;

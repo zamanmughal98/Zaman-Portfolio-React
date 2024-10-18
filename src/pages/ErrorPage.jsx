@@ -1,4 +1,4 @@
-import Error404 from '../components/Error404';
+import Error404 from '../components/error/Error404';
 const ErrorPage = () => {
   const error = {
     errorHeading: "Looks like you're lost",
