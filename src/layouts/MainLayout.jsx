@@ -19,15 +19,21 @@ const MainLayout = () => {
     });
   }, [pathname]);
 
-  const style = {
+  const sectionStyles = {
     display: 'flex',
     flexDirection: 'column',
     minHeight: '100dvh',
   };
+
+  const mainStyles = {
+    flexGrow: 1,
+    zIndex: 1,
+  };
+
   return (
-    <section style={style}>
+    <section style={sectionStyles}>
       <Navbar />
-      <main style={{ flexGrow: 1 }}>
+      <main style={mainStyles}>
         <Outlet />
       </main>
       <Footer Fullname={'Zaman Bin Ishfaq'} />
