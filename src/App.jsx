@@ -11,6 +11,7 @@ import MainLayout from './layouts/MainLayout';
 
 import HomePage from './pages/HomePage';
 import SkillsPage from './pages/SkillsPage';
+import ProjectPage from './pages/ProjectPage';
 import ContactPage from './pages/ContactPage';
 import ErrorPage from './pages/ErrorPage';
 
@@ -22,10 +23,7 @@ const App = () => {
 
         <Route path="/skills" element={<SkillsPage />} />
 
-        <Route
-          path="/projects"
-          element={<h2>projects Page Coming Soon ......</h2>}
-        />
+        <Route path="/projects" element={<ProjectPage />} />
 
         <Route
           path="/resume"
