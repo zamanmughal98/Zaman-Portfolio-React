@@ -1,0 +1,6 @@
+.filter {
+  display: flex;
+  align-self: flex-start;
+  gap: 2rem;
+  background: #3498db;
+}
